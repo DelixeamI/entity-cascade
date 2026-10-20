@@ -1,5 +1,10 @@
 # entity-cascade
 
+[![CI](https://img.shields.io/github/actions/workflow/status/DelixeamI/entity-cascade/ci.yml?branch=main&label=CI&logo=github)](https://github.com/DelixeamI/entity-cascade/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![python](https://img.shields.io/badge/python-3.12-blue)](pyproject.toml)
+[![tests](https://img.shields.io/badge/tests-169_passed-brightgreen)](tests)
+
 Match supplier price-list rows to a product catalog with a cascade: cheap retrieval, a cross-encoder reranker, an LLM for the doubtful rows, a human for the unsure ones.
 The point of the project is the trade-off every such system has to make: how much work you automate versus how accurate the automatic answers are, measured on a held-out split.
 
