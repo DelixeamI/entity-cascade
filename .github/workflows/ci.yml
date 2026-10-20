@@ -2,7 +2,9 @@ name: ci
 
 on:
   push:
+    paths-ignore: ["**.md", "PLAN.md"]
   pull_request:
+    paths-ignore: ["**.md"]
 
 env:
   HF_HOME: ${{ github.workspace }}/.hf_cache
