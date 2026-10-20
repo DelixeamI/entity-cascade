@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Nokia T-Mobile Unlocked Cellular Phone - N96; description: Nokia T-Mobile Unlocked Cellular Phone - N96/ 5 Megapixel Camera/ 3G High Speed Data Access/ GSM 850/900/1800/1900/ HSDPA 850/1900/ 2.8' Display/ Wi-Fi 802.11 b/g UPnP Technology/ microSD Card Slot/ 16GB Internal Memory/ Built-In GPS Receiver/ Stereo FM Radio With RDS/ DVB-H TV Broadcast Receiver/ T...\n\nCandidates:\n1. name: Nokia N96 Unlocked Phone - 16GB, 5MP Camera with Carl Zeiss Optics and Dual-LED Flash and Auto-Focus, Built-In GPS, WiFi, - 002G6Q3; brand: NOKIA - N SERIES - MULTIMEDIA\n2. name: Panasonic KX-TG6702B Cordless Telephone - KX-TG6702B; brand: Panasonic; description: Panasonic 5.8GHz 2 Line Expandable Phone With Extra Handset; price: $159.92\n3. name: Panasonic KX-TG9333T Cordless Phone - KX-TG9333T; brand: Panasonic; description: Panasonic DECT 6.0 1.9GHz Expandable Cordless Phone with Digital Answering System\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number N96\"}",
+  "input_tokens": 492,
+  "output_tokens": 28
+ }
+}

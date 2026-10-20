@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Peerless 42' - 71'  Articulating Flat Panel TV Silver Dual Wall Arm Mount - PLAV70UNLPS; brand: peerless; description: Peerless 42' - 71'  Articulating Flat Panel TV Silver Dual Wall Arm Mount - PLAV70UNLPS/ Anti-Lockout Feature Prevents Joint Binding/ Vertical Adjustment/ Snap-Cover Cord Management And Mesh Cord Sheaths/ 200 Lbs Load Capacity/ Silver Finish\n\nCandidates:\n1. name: Peerless PLAV70-UNLP-S Articulating Dual-Arm with Vertical Adjustment - PLAV70 UNLPS; brand: Peerless; description: Steel - 200 lb; price: $449.52\n2. name: Peerless SmartMount 700 Series Articulating Wall Arm; brand: Peerless; description: Peerless SA745PU - Articulating Wall Arm for 32' to 45' LCD and Plasma Screens - Piano Black\n3. name: Peerless SmartMount 700 Series Articulating Wall Arm; brand: Peerless; description: Peerless SA750PU - Articulating Wall Arm for 32' to 50' LCD and Plasma Screens - Piano Black\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number PLAV70UNLPS\"}",
+  "input_tokens": 458,
+  "output_tokens": 32
+ }
+}

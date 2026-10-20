@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: iHome Black Clock Radio Audio System For iPod - IH9BR; brand: ihome; description: iHome Black Clock Radio Audio System For iPod - IH9BR/ Universal Dock With Inserts To Fit Docking iPod Models/ Dual Alarm With AM/FM Presets/ Bass, Treble, 3D And Balance Controls/ Extra-Large Backlit Custom LCD Display With Dimmer/ Black Finish\n\nCandidates:\n1. name: iHome IP47BR Bluetooth Clock Radio & Speakerphone for iPhone & iPod - iP47BR; brand: iHome\n2. name: IH9B6R BLACK ALARM CLOCK F/IPODPERPCHARGES DOCKED IPOD REMOTE CONTROL; brand: SDI TECHNOLOGIES - IHOME\n3. name: iHome iH70SRC 15 Watt Computer Speakers with iPod Syncing/Charging Dock - IH70SRC; brand: iHome\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number IH9BR exactly.\"}",
+  "input_tokens": 371,
+  "output_tokens": 33
+ }
+}

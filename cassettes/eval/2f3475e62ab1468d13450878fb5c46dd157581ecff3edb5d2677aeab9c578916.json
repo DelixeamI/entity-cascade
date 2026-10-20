@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Motorola MotoRokr Portable Bluetooth Car Kit Speaker Phone - T505; brand: motorola; description: Motorola MotoRokr Portable Bluetooth Car Kit Speaker Phone - T505/ 2.0 Bluetooth Wireless Technology/ Noise Cancellation Technology/ Loud Sound High Speaker Output/ Audio CallerID/ StationFinder/ Convenient Multi-Function Button/ Long Battery Life/ Mini-USB Connector/ Black Finish; price: $129.00\n\nCandidates:\n1. name: MOTOROLA T305 BLUETOOTH VISOR SPEAKER PHONE CAR KIT - RETAIL - 89082J; brand: Motorola; price: $46.93\n2. name: BlueAnt Supertooth Light Compact Bluetooth Speakerphone -- Black - 093744; brand: BlueAnt\n3. name: Boss 161 Speaker; brand: BOSE; description: Speaker - Magnetically Shielded; price: $158.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number T505\"}",
+  "input_tokens": 387,
+  "output_tokens": 32
+ }
+}

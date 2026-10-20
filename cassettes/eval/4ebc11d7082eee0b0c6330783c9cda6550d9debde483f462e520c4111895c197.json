@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony PSP 2000 Playstation Portable Gaming System Core 98510 In Piano Black - 711719851004; brand: sony; description: Sony PSP 2000 Playstation Portable Gaming System Core 98510 In Piano Black - 711719851004/ Play Games, Watch Movies On UMD Discs, And Listen To Music All In One Device/ 4.3' LCD Screen (16:9)/ 480 x 272 Pixel/ Wi-Fi (IEEE 802.11b) For Wireless Networking With Other PSP Owners/ Memory Stick PRO Duo/...; price: $185.00\n\nCandidates:\n1. name: Sony PSP Core System (Piano Black) (Slim Model with AV Video Out Port) - 98510; brand: Sony\n2. name: Sony Z570N/B Notebook - VGNZ570N/B; brand: Sony; description: Intel Centrino 2 Core 2 Duo P9500 2.53GHz - 13.1' - 3GB DDR3 SDRAM - 320GB HDD - DVD-Writer (DVD-RAM/R/RW) - Bluetooth, Gigabit Ethernet, Wi-Fi - Windows Vista Business - Black\n3. name: Toshiba 26AV502U - 26' Widescreen 720p LCD HDTV - Piano Black; brand: Toshiba\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 511,
+  "output_tokens": 25
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung 22' Black Flat Panel LCD HDTV - LN22A450; brand: samsung; description: Samsung 22' Black Flat Panel Series 4 LCD HDTV - LN22A450/ 1680 x 1050 Resolution/ 3000:1 Contrast Ratio/ SRS TruSurround XT/ Cold Cathode Fluorescent Lamp (CCFL)/ 8ms Response Time/ Hidden Bottom Speakers/ PC Compatible/ Black Finish\n\nCandidates:\n1. name: Samsung 4 Series LN22A451 22' LCD TV; brand: Samsung; description: Samsung LN22A451 - 22' Widescreen LCD HDTV - 3,000:1 Dynamic Contrast Ratio - 8ms Response Time - White; price: $399.00\n2. name: Samsung LN22A650 22' LCD TV; brand: Samsung; description: Samsung LN22A650 - 22' Widescreen LCD HDTV - 3,000:1 Contrast Ratio - 8ms Response Time; price: $458.00\n3. name: Samsung 4 Series LN32A450 32' LCD TV; brand: Samsung; description: Samsung LN32A450 - 32' Widescreen 720p LCD HDTV - 10000:1 Dynamic Contrast Ratio - 6ms Response Time - Piano Black; price: $578.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact brand and model number LN22A450.\"}",
+  "input_tokens": 521,
+  "output_tokens": 37
+ }
+}

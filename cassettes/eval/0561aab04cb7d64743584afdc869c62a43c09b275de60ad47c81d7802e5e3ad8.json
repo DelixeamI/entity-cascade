@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony SCPH-98046 PlayStation 3 Blu-Ray DVD Remote Control - 711719804604; brand: sony; description: Sony SCPH-98046 PlayStation 3 Blu-Ray DVD Remote Control - 711719804604/ Full Access To The PlayStation 3 Systems Disc Features/ Can Be Used Without Having To Point Directly At The System; price: $24.99\n\nCandidates:\n1. name: Sony Playstation 3 Blu-Ray DVD Remote - 98046; brand: SONY COMPUTER ENTERTAINME; price: $18.44\n2. name: PlayStation 2 DVD Remote - 97076; brand: Sony Computer Electronic\n3. name: Sony Remote Control - RMV310; brand: Sony; description: TV, VCR, DVD Player, Cable Box, Satellite Receiver, Amplifier, CD Player, DVR - 23 ft - Universal Remote; price: $14.72\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 405,
+  "output_tokens": 25
+ }
+}

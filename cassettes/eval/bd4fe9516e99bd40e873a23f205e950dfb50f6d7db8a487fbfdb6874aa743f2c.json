@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Silver Dect 6.0 Cordless Telephone - KXTG1033S; brand: panasonic; description: Panasonic KX-TG1033S Silver Dect 6.0 Cordless Telephone - KXTG1033S/ DECT 6.0 Technology/ Light Up Indicator/ 16-Minute All-Digital Answering System/ Silver Finish\n\nCandidates:\n1. name: Panasonic KX-TG9332S DECT 6.0 Expandable Digital Cordless Phone; brand: Panasonic; description: 1 x Phone Line(s) - Silver\n2. name: Panasonic KX-TG1034S DECT 6.0 Cordless Phone - KX-TG1034S; brand: Panasonic; description: Panasonic DECT 6.0 Series 4 Handset Cordless Phone System with Answering System; price: $89.45\n3. name: Panasonic KX-TG9333T Cordless Phone - KX-TG9333T; brand: Panasonic; description: Panasonic DECT 6.0 1.9GHz Expandable Cordless Phone with Digital Answering System\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates have the same model number KXTG1033S.\"}",
+  "input_tokens": 436,
+  "output_tokens": 38
+ }
+}

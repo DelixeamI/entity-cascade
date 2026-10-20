@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Polk Audio CSI A4 Black Center Channel Loudspeaker - CSIA4BK; brand: polk audio; description: Polk Audio CSI A4 Black Center Channel Loudspeaker - CSIA4BK/ 1' Silk/Polymer Dome Tweeter/ Dual 5-1/4' Mid/Woofers/ Magnetic Shielding/ All-MDF Construction/ Acoustically Inert Stamped Driver Baskets/ Floating Anti-Diffraction Grilles/ Dual Bi-Ampable Gold-Plated 5-Way Binding Post Inputs/ Black Fi...; price: $279.95\n\nCandidates:\n1. name: Polkaudio CSi A4 Black High Performance Center Channel Loudspeaker - AM4415-A; brand: Polkaudio; price: $189.47\n2. name: Polk Audio RM705 Black 5.1 Channel Home Theater System - RM 705; brand: Polk Audio; price: $398.72\n3. name: Polkaudio CSi A6 Black High Performance Center Channel Loudspeaker - AM6615-A; brand: Polkaudio; price: $449.95\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No exact match in brand or model number\"}",
+  "input_tokens": 433,
+  "output_tokens": 28
+ }
+}

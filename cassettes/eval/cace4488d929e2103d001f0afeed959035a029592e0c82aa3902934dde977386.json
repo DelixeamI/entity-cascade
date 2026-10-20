@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Bose Lifestyle 48 Series IV 43479 Home Entertainment System - LS48IVWH; brand: bose; description: Bose Lifestyle 48 Series IV Home Entertainment System - LS48IVWH/ ADAPTiQ Audio Calibration System/ Acoustimass Module/ Jewel Cube Speakers/ Direct/Reflecting Speaker Technology/ VS-2 Video Enhancer/ Proprietary Videostage 5 Decoding Circuitry/ Digital 5.1 Decoding/ Control Integration/ White Finish; price: $3,999.00\n\nCandidates:\n1. name: Boss 161 Speaker; brand: BOSE; description: Speaker - Magnetically Shielded; price: $158.00\n2. name: Bose PMCII Remote Control; brand: BOSE; description: DVD Player, TV, VCR, Tuner, Amplifier, CD Player, Cable Box, Satellite Receiver, PVR (Personal Video Recorder) - 80 ft - DVD Player Remote; price: $145.37\n3. name: Sony BRAVIA DAV-HDX275 Home Theater System; brand: Sony; description: , 5.1 Speakers - 5 Disc(s) - Progressive Scan - 1000W RMS - Dolby Pro Logic II\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 455,
+  "output_tokens": 34
+ }
+}

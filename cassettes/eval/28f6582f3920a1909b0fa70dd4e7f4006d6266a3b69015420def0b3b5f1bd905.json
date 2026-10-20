@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Whirlpool White Front Load Washer - WFW9200SWH; brand: whirlpool; description: Whirlpool Duet WFW9200SQ White Front Load Washer - WFW9200SWH/ 4.0 Cu. Ft. Capacity/ 6th Sense Technology/ Quiet Wash Plus Noise Reduction/ Built-In Water Heater/ Add-A-Garment Feature/ Sanitary Cycle/ 4 Temperature Selections/ White Finish\n\nCandidates:\n1. name: Whirlpool WFW8300SW 27' Front-Load Washer w/3.4 Cu. Ft. Capacity (White); brand: Whirlpool; price: $668.75\n2. name: Whirlpool WTW6700TW 28' Cabrio Series Top Loader Washer (Metallic/White); brand: Whirlpool; price: $925.91\n3. name: Whirlpool WTW6400SW Cabrio 4.5 Cu Ft Capacity Washer (White); brand: Whirlpool; price: $819.75\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number WFW9200SWH\"}",
+  "input_tokens": 417,
+  "output_tokens": 34
+ }
+}

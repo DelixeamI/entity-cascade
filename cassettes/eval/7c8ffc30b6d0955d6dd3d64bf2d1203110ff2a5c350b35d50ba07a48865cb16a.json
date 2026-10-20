@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Omnimount 42' - 63' Wishbone Cantilever Extra Large Flat Panel TV Silver Wall Mount - UCLXB; description: Omnimount 42' - 63' Wishbone Cantilever Extra Large Flat Panel TV Silver Wall Mount - UCLXB/ Double Stud Mounting/ Dual Arm Cantilever Mount/ Lift n Lock For Easy Installation/ Integrated Cable Management/ Supports Up To 200 Lbs\n\nCandidates:\n1. name: OmniMount Ultra Low Profile ULPT-L Flat Panel Wall Mount - ULPT-L A; brand: OMNIMOUNT SYSTEMS, INC; description: 200 lb - Anthracite; price: $278.95\n2. name: OmniMount TV Top Shelf Mount - CCH1P; brand: OMNIMOUNT SYSTEMS, INC; description: Steel - 30 lb\n3. name: OmniMount Stainless Steel Speaker Mount - 20.0 WALL-W; brand: OMNIMOUNT SYSTEMS, INC; description: Stainless Steel - 20 lb\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number UCLXB.\"}",
+  "input_tokens": 406,
+  "output_tokens": 32
+ }
+}

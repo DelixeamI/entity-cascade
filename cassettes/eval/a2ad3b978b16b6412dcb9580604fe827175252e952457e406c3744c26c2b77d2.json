@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Denon Black Blu-ray Disc DVD-CD Player - DVD1800BD; brand: denon; description: Denon Black Blu-ray Disc DVD-CD Player - DVD1800BD/ 1080p High Resolution Via HDMI/ Dolby TrueHD/ Dolby Digital Plus/ DTS-HD Master Audio/ Digital Noise Reduction/ Remote Control/ Black Finish\n\nCandidates:\n1. name: Denon DVD-3800BDCI Blu-ray Disc Player - DVD3800BDCI; brand: Denon; description: BD-R, DVD-RW, CD-RW, Secure Digital (SD) - DVD Video, CD-DA, MP3, WMA, JPEG, DivX 6, PCM Playback - Progressive Scan\n2. name: Denon DVD-2930CI DVD Player - DVD2930CI; brand: Denon; description: DVD+RW, DVD-RW, CD-RW - DVD Video, DVD Audio, SACD, Video CD, Picture CD, JPEG, WMA, PCM, HDCD, MP3, MPEG-1, MPEG-2, MPEG-4, DivX Playback - 1 Disc(s) - Progressive Scan - Black; price: $448.00\n3. name: Denon DVD-2500BTCI Blu-ray Disc Player; brand: Denon; description: BD-R, DVD-RW, CD-RW, Secure Digital (SD), Mini Secure Digital (miniSD) - BD Video, DVD Video, CD-DA, MP3, WMA, JPEG, DivX 6, LPCM Playback - Progressive Scan; price: $655.97\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number DVD1800BD.\"}",
+  "input_tokens": 537,
+  "output_tokens": 35
+ }
+}

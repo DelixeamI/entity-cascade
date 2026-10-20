@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Black LocationFree Base Station - LFV30; brand: sony; description: Sony Black LocationFree Base Station - LFV30/ Watch TV Wherever You Are/ Compatible With PC Or PSP System/ Programmable On-Screen Home Remote/ Stream Outside Your Home/ User-Friendly/ Black Finish; price: $199.00\n\nCandidates:\n1. name: Sony LFV30 Network Media Player; brand: Sony; description: Ethernet, Wi-Fi; price: $172.47\n2. name: Sony PSP Core System (Piano Black) (Slim Model with AV Video Out Port) - 98510; brand: Sony\n3. name: SONY IPOD/PHONE DOCK CLOCK RADIO BLACK NIC - ICFC1IPMK2WHI; brand: Sony; price: $61.42\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates match the brand and model number Sony LFV30\"}",
+  "input_tokens": 362,
+  "output_tokens": 35
+ }
+}

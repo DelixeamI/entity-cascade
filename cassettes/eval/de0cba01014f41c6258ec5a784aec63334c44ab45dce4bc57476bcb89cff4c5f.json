@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG 30' Black Freestanding Gas Range - LRG30357BK; description: LG 30' Black Freestanding Gas Range - LRG30357BK/ 5.0 Cu. Ft. Capacity Oven/ SuperBoil Burner/ 5 Burner System/ SmoothTouch Controls/ Warming Drawer/ Electronic Ignition System/ One Piece Recessed Cooktop/ Self-Cleaning Oven/ White Finish\n\nCandidates:\n1. name: LG 5.0 cu.ft. Freestanding Gas Range; brand: LG Electronics\n2. name: LG 5.0 cu.ft. Freestanding Gas Range; brand: LG Electronics\n3. name: LG 5.0 cu.ft. Freestanding Gas Range; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Model number mismatch and color difference\"}",
+  "input_tokens": 345,
+  "output_tokens": 26
+ }
+}

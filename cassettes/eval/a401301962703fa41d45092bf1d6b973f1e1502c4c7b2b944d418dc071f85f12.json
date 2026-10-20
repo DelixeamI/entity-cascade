@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Universal IR/RF Remote - MX350; description: Universal IR/RF Remote - MX350/ Controls Up To 10 Components/ Extensive Macro Programming/ Memory Back-Up/ One Hand Ergonomics; price: $149.95\n\nCandidates:\n1. name: Universal Aeros IR/RF Remote Control - MX850; brand: UNIVERSAL REMOTE CONTROL, INC; description: TV, DVD Player, Audio Receivers, Cable Box, Satellite Receiver, PVR (Personal Video Recorder) - 100 ft - Universal Remote; price: $256.99\n2. name: Logitech Harmony One Advanced Universal Remote Control - 915-000035; brand: Logitech; description: Logitech Harmony One Advanced Universal Remote; price: $179.99\n3. name: Universal MasterControl Universal Learning Remote Control - RF20; brand: UNIVERSAL REMOTE CONTROL, INC; description: Audio/Video, TV, VCR, DVD Player, CD Player, Cable Box, DVR, Audio System, Tape Deck, PC, Satellite Radio, iPod, Xbox 360, Lighting System - 50 ft, 100 ft - Universal Remote\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 442,
+  "output_tokens": 34
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Monster PS3 CV/FO-10 Playstation 3 GameLink Component Video And Fiber Optic Digital Audio AV Kit - PS3CVFO10; brand: monster; description: Monster PS3 CV/FO-10 Playstation 3 GameLink Component Video And Fiber Optic Digital Audio AV Kit - PS3CVFO10/ 24K Gold Contact Turbine Connectors/ Extra Low-Loss Optical Fiber/ Nitrogen Gas-Injected Dielectric Insulator\n\nCandidates:\n1. name: Monster Game 127961 GameLink(tm) 2M HDMI Digital Video/Audio Cable for PS3; brand: Monster Game; price: $45.79\n2. name: Monster Cable GameLink HDMI Digital Video/Audio Cable for PlayStation 3 - 1 x HDMI - 6.56ft - PS3 HDMI-2M; brand: Monster Cable; price: $55.79\n3. name: Monster Cable iCable A IC MINI IP-3 S Audio Stereo Cable - 123870; brand: Monster; description: 1 x Mini-phone Stereo - 1 x Mini-phone Stereo - 3ft\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 427,
+  "output_tokens": 30
+ }
+}

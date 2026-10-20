@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic 2-Line Integrated Telephone System - KXTS208W; brand: panasonic; description: Panasonic 2-Line Integrated Telephone System - KXTS208W/ 3-Way Conference/ One-Touch/Speed Dialer/ Speakerphone/ White Finish\n\nCandidates:\n1. name: Panasonic KX-TS208W Corded Phone; brand: Panasonic; description: 2 x Phone Line(s) - Headset - White\n2. name: Panasonic KX-TSC14W 2-Line Telephone; brand: Panasonic; description: 2 x Phone Line(s) - Headset - White\n3. name: Panasonic KX-TG6700B Cordless Telephone; brand: Panasonic; description: Panasonic KX-TG6700B 5.8 GHz 2-Line FHSS GigaRange Expandable Digital Cordless Phone with Answering System & Call Waiting Caller ID; price: $106.14\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number KXTS208W\"}",
+  "input_tokens": 384,
+  "output_tokens": 32
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG WM3988HWA 4.2 Cu Ft White Full Size SteamWasher And Dryer Combo - WM3988WH; description: LG WM3988HWA 4.2 Cu Ft White Full Size SteamWasher And Dryer Combo - WM3988WH/ 4.2 Cu. Ft. Capacity/ Electronic Control Panel With Dial-A-Cycle/ Direct Drive/ SenseClean System/ RollerJets And Forced Water Circulation/ Sanitary Cycle/ LoDecibel Quiet System/ Transparent Glass Window Door/ White Fini...\n\nCandidates:\n1. name: Full Size Steam Washer and Dryer Combination with Allergiene Cycle; brand: LG Electronics\n2. name: LG Electronics 24' Washer/Dryer Combo: White; brand: LG Electronics\n3. name: LG 4.0 cu. ft. Capacity Front Load Washer w/ Sanitary cycle; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number WM3988HWA.\"}",
+  "input_tokens": 373,
+  "output_tokens": 34
+ }
+}

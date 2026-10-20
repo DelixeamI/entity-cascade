@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon Color Ink Tank - CL41CL; brand: canon; description: Canon Color Ink Tank - CL41CL/ Compatible With The Pixma iP1600, MP170 Printers; price: $24.00\n\nCandidates:\n1. name: Canon Ink Cartridge For PIXMA iP1600, iP6210D and iP6220D Printers - 0617B002; brand: Canon; description: Color; price: $19.11\n2. name: Canon CLI-8 Green Ink Tank For PIXMA Pro 9000 Printer - 0627B002; brand: Canon; description: Green; price: $12.85\n3. name: Canon CLI-8 Red Ink Tank For PIXMA Pro9000 Printer - 0626B002; brand: Canon; description: Red; price: $15.75\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates have the same brand and model number as the price-list item.\"}",
+  "input_tokens": 390,
+  "output_tokens": 37
+ }
+}

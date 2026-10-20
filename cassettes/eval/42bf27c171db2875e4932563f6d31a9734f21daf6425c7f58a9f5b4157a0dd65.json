@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Black Speaker Dock And Clock Radio For iPod And iPhone - ICFC1IPMK2BLK; brand: sony; description: Sony ICFC1IPMK2 Black Speaker Dock And Clock Radio For iPod And iPhone - ICFC1IPMK2BLK/ Unique Adjustable Backstop For iPods/ 3 Wake-Sleep Sound Alert Options/ Digital AM-FM Tuner/ Alarm Clock/ Automatic Time Set/ Automatic Daylight Savings Time/ Battery Charger/ Audio Input/ Black Finish\n\nCandidates:\n1. name: SONY IPOD/PHONE DOCK CLOCK RADIO BLACK NIC - ICFC1IPMK2BLK; brand: Sony; price: $80.25\n2. name: SONY IPOD/PHONE DOCK CLOCK RADIO BLACK NIC - ICFC1IPMK2WHI; brand: Sony; price: $61.42\n3. name: Klipsch RoomGroove Wireless iPod Speaker System - 1006602; brand: Klipsch; description: Black; price: $199.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 403,
+  "output_tokens": 25
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung S3 Black Multimedia Player - YPS3JAB; brand: samsung; description: Samsung S3 Black Multimedia Player - YPS3JAB/ 4 GB Internal Flash Memory/ 1.8' TFT LCD Display/ Touch-Sensitive LED Controls/ Multi-Formats Support/ DNSe 2.0 Sound Engine/ FM Tuner And Recorder With Presets/ Up To 25 Hours Audio Playback/ Up To 4 Hours Video Playback/ Black Finish\n\nCandidates:\n1. name: Samsung YP-S2ZW 1GB Flash MP3 Player - YP-S2ZW/XAA; brand: Samsung; description: 1GB Flash Memory - White; price: $29.67\n2. name: Samsung YP-S2ZW 1GB Flash MP3 Player - YP-S2ZG/XAA; brand: Samsung; description: 1GB Flash Memory - Green; price: $29.67\n3. name: Samsung L200 Digital Camera - Black - EC-L200ZBBA/US; brand: Samsung; description: Samsung L200 10 Megapixel Digital Camera with 2.5 LCD, 3x Optical Zoom, Digital Image Stabilization, Face Detection Function - Black; price: $119.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number YPS3JAB\"}",
+  "input_tokens": 454,
+  "output_tokens": 33
+ }
+}

@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+env:
+  HF_HOME: ${{ github.workspace }}/.hf_cache
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: "3.12"
+
+      # The two small models (embedder + reranker) are cached between runs.
+      - name: Cache HF models
+        uses: actions/cache@v4
+        with:
+          path: .hf_cache
+          key: hf-${{ hashFiles('configs/default.yaml') }}
+
+      # Cross-encoder scores, keyed by content hash: speeds `make eval` up, never changes a result.
+      - name: Cache reranker scores
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: rerank-${{ hashFiles('configs/default.yaml', 'src/entity_cascade/rerank/**') }}
+          restore-keys: rerank-
+
+      - name: Install
+        run: uv sync --frozen || uv sync
+
+      - name: Lint (ruff, mypy)
+        run: make lint
+
+      # Unit tests plus the gate on the fixture slice (RecordedLLM, eval_thresholds.yaml).
+      - name: Test
+        run: make test
+
+      - name: Fetch data
+        run: make fetch
+
+      - name: Eval
+        run: make eval
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: reports/

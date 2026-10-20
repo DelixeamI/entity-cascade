@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Apple MacBook Air SuperDrive - MB397GA; brand: apple; description: Apple MacBook Air SuperDrive - MB397GA/ Compact And Portable Slot-Loading 8x SuperDrive/ Connect To MacBook Air USB Slot/ Play And Burn Both CDs And DVDs/ Watch DVD Movie, Install Software, Or Create Backup Discs; price: $99.00\n\nCandidates:\n1. name: Apple 8x DVDRW Drive - MB397G/A; brand: Apple; description: (Double-layer) - DVD-RAM/R/RW - 8x 8x 8x (DVD) - 24x 16x 24x (CD) - USB - External; price: $95.71\n2. name: Apple MacBook Notebook - MB467LLA; brand: Apple; description: Intel Core 2 Duo 2.4GHz - 13.3' WXGA - 2GB DDR3 SDRAM - 250GB HDD - DVD-Writer (DVDR/RW) - Gigabit Ethernet, Wi-Fi, Bluetooth - Mac OS X 10.5 Leopard; price: $1,549.99\n3. name: Apple MacBook Pro Notebook - MB471LL/A; brand: Apple; description: Intel Core 2 Duo 2.53GHz - 15.4' WXGA+ - 4GB DDR3 SDRAM - 320GB HDD - DVD-Writer (DVDR/RW) - Gigabit Ethernet, Wi-Fi, Bluetooth - Mac OS X 10.5 Leopard; price: $2,369.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The price-list item is a SuperDrive with model number MB397GA, while candidates are either a different model of drive or complete notebooks.\"}",
+  "input_tokens": 536,
+  "output_tokens": 50
+ }
+}

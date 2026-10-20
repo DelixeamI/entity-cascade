@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Toshiba Black DVD/VCR Combinaton Player - SDV296; brand: toshiba; description: Toshiba Black DVD/VCR Combinaton Player - SDV296/ Progressive Scan DVD Player/ One Touch Recording For The VCR/ ColorStream Pro Progressive Scan Component Video Outputs/ Simultaneous DVD Playback And VHS Record/ JPEG Viewer/ Black Finish; price: $89.00\n\nCandidates:\n1. name: Toshiba D-VR610 DVD VCR Combo; brand: Toshiba; description: Toshiba D-VR610 - DVD Recorder/VCR Combo\n2. name: Toshiba D-R410 DVD Player/Recorder; brand: Toshiba; description: Toshiba D-R410 - DVD Recorder w/ 1080p Upconversion\n3. name: Toshiba SD-4100 DVD Player; brand: Toshiba; description: DVD+RW, DVD-RW, DVD-R, CD-RW - DVD Video, Video CD, SVCD, MP3, JPEG Playback - Progressive Scan; price: $39.36\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number SDV296.\"}",
+  "input_tokens": 406,
+  "output_tokens": 34
+ }
+}

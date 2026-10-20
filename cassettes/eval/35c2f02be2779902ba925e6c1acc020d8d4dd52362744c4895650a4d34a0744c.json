@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Lithium-Ion Rechargeable Battery Pack - NPFD1; brand: sony; description: Sony Lithium-Ion Rechargeable Battery Pack - NPFD1/ InfoLITHIUM Long-Lasting Lithium-Ion Battery/ Compatilble With Sony Cyber-Shot DSCT2 Series, DSC-T70 Series, And DSC-T200 Series\n\nCandidates:\n1. name: Sony NP-FH100 Lithium Ion Camcorder Battery - NPFH100; brand: Sony; description: Lithium Ion (Li-Ion) - 8.4V DC - Photo Battery\n2. name: Sony InfoLithium H-Series NP-FH70 Camcorder Battery - NPFH70; brand: Sony; description: Lithium Ion (Li-Ion) - 8.4V DC - Photo Battery; price: $57.00\n3. name: Nikon EN-EL3e Lithium Ion Digital Camera Battery - 25334; brand: Nikon; description: Nikon EN-EL3e Rechargeable Li-ion Battery; price: $34.24\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number NPFD1.\"}",
+  "input_tokens": 426,
+  "output_tokens": 32
+ }
+}

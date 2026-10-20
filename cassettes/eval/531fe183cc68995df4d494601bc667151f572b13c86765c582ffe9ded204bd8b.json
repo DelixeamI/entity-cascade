@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Silver 1080p Upscaling DVD Player - DVPNS700HS; brand: sony; description: Sony Silver 1080p Upscaling DVD Player - DVPNS700HS/ 1080p Upscaling Video Output Through HDMI Connection/ BRAVIA Sync/ High Resolution JPEG Output/ Precision Cinema Progressive Technology/ Precision Drive/ Child Lock/ Multi Disc Resume/ Multi Brand TV Remote Control/ Silver Finish\n\nCandidates:\n1. name: Sony DVP-NC800H/S DVD Player - DVP-NC800HS; brand: Sony; description: DVD+RW, DVD-RW, DVD+R, DVD-R, CD-RW - DVD Video, CD-DA, JPEG, MP3, SVCD, Video CD Playback - 5 Disc(s) - Progressive Scan - Silver; price: $128.69\n2. name: Sony DVPNS57P DVD Player - DVPNS57PS; brand: Sony; description: DVD-R, DVD+R, DVD+RW, DVD-RW, CD-RW - DVD Video, SVCD, Video CD, JPEG, MP3 Playback - 1 Disc(s) - Progressive Scan - Silver; price: $45.32\n3. name: Sony DVPNS57P DVD Player - DVPNS57PB; brand: Sony; description: DVD+RW, DVD-RW, DVD+R, DVD-R, CD-RW - DVD Video, SVCD, Video CD, JPEG, MP3 Playback - 1 Disc(s) - Progressive Scan - Black; price: $39.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 530,
+  "output_tokens": 34
+ }
+}

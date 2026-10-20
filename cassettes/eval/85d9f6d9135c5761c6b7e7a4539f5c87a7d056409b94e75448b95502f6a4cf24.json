@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Plain Paper Fax/Copier With Cordless Phone Answering System - Grey Finish - KXFG2451; brand: panasonic; description: Panasonic Plain Paper Fax/Copier With Cordless Phone Answering System - KXFG2451/ Automatic Fax/Phone Switching/ 2.4GHz GigaRange Cordless Handset With Handset Speakerphone/ Voice Enhancer Technology/ All-Digital Answering System (18 Min)/ Navigator Key With 2-Line Display; price: $119.00\n\nCandidates:\n1. name: Panasonic KX-TG6700B Cordless Telephone; brand: Panasonic; description: Panasonic KX-TG6700B 5.8 GHz 2-Line FHSS GigaRange Expandable Digital Cordless Phone with Answering System & Call Waiting Caller ID; price: $106.14\n2. name: Panasonic KX-FP145 Plain Paper Thermal Transfer Fax/Copier - KXFP145; brand: Panasonic; description: Panasonic Slim Cabinet Plain Paper Fax/Copier with All-digital Answering System; price: $94.88\n3. name: Panasonic KX-TG1034S DECT 6.0 Cordless Phone - KX-TG1034S; brand: Panasonic; description: Panasonic DECT 6.0 Series 4 Handset Cordless Phone System with Answering System; price: $89.45\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number KXFG2451.\"}",
+  "input_tokens": 498,
+  "output_tokens": 36
+ }
+}

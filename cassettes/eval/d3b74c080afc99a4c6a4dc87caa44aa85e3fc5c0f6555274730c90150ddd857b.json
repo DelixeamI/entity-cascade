@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic VIERA 50' Plasma Flat Panel Black HDTV - TH50PZ800U; brand: panasonic; description: Panasonic VIERA 50' Plasma Flat Panel Black HDTV - TH50PZ800U/ 1920 x 1080 Full HD Resolution/ One-Sheet Glass Design/ Anti-Reflective Screen/ 4096 Shades of Gradation/ 1,000,000:1 Dynamic Contrast Ratio/ 24p Film Mode/ THX Certified/ VIERA Link/ Deep Color/ x.v.Color/ Digital Comb Filter/ 3D Color...\n\nCandidates:\n1. name: Panasonic Viera TH-50PZ850U 50' Plasma TV; brand: Panasonic; description: 50' - ATSC, NTSC - 16:9 - 1920 x 1080 - HDTV; price: $2,096.99\n2. name: Panasonic VIERA TH-50PZ85U 50' Plasma TV; brand: Panasonic; description: 50' - ATSC, NTSC - 16:9 - 1920 x 1080 - HDTV; price: $1,499.00\n3. name: Panasonic Viera TH-46PZ80U 46' Plasma TV; brand: Panasonic; description: 46' - ATSC, NTSC - 16:9 - 1920 x 1080 - Surround - HDTV; price: $1,249.94\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates have the same model number TH50PZ800U.\"}",
+  "input_tokens": 545,
+  "output_tokens": 39
+ }
+}

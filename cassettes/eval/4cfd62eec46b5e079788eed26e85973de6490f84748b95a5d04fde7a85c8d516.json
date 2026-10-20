@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony DSCH2 Soft Carrying Camera Case - Black Finish - LCSCSH; brand: sony; description: Sony DSCH2 Soft Carrying Black Camera Case - LCSCSH/ Polypropylene Construction/ Extra Compartments For Accessory Storage/ Can Hold Many Sony Or Other Manufacturers Digital Cameras/ Black Finish\n\nCandidates:\n1. name: Sony LCS-CSH Soft Camera Case - LCSCSH; brand: Sony; description: Top Loading - Polypropylene - Black\n2. name: Sony LCS-CSJ Soft Camera Case - LCSCSJ; brand: Sony; description: Top Loading - Polyamide - Black\n3. name: Sony LCS-CSQ Soft Cyber-shot Camera Case - LCSCSQ/B; brand: Sony; description: Top Loading - Polyamide - Black\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number LCSCSH\"}",
+  "input_tokens": 340,
+  "output_tokens": 28
+ }
+}

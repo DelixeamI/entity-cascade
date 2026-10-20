@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Bracketron Nav-Mat Portable GPS Dash Mount - UFM100BL; brand: bracketron; description: Bracketron Nav-Mat Portable GPS Dash Mount - UFM100BL/ Weighted Anti-Skid Base/ Conforms To Your Dash/ Holds Up To Several Pounds/ Easily View Your GPS While Drivaing/ Uses The Stock GPS Windshield Mount\n\nCandidates:\n1. name: Garmin GPS Receiver Dash Mount - 010-10613-00; brand: Garmin\n2. name: Bracketron Low-Pro Windshield Mount - SWM-400-BL; brand: Bracketron; description: Black\n3. name: Bracketron iPod Docking Kit; brand: Bracketron; description: Bracketron IPM-202-BL Pro Series iPod Docking Kit; price: $4.65\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 359,
+  "output_tokens": 30
+ }
+}

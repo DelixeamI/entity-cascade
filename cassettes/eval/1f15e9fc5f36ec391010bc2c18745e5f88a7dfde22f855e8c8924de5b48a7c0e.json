@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Terk Mini Tuner Cartridge For XM Ready Home Products - CNP2000; brand: xm; description: Terk Mini Tuner Cartridge For XM Ready Home Products - CNP2000/ Connects To Any Home Or Portable Audio Product With The XM Ready Logo; price: $29.00\n\nCandidates:\n1. name: Audiovox CNP2000 XM Mini-Tuner; brand: Audiovox; description: XM Satellite Radio Receiver\n2. name: Audiovox XM6 Outdoor Home Antenna - XM-6; brand: Terk Technologies\n3. name: Audiovox Satellite Radio Tuner; brand: Xm; description: TERK XMRVRFM002 CommanderMT Universal In-Car XM Receiver\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches both brand and model number exactly.\"}",
+  "input_tokens": 338,
+  "output_tokens": 30
+ }
+}

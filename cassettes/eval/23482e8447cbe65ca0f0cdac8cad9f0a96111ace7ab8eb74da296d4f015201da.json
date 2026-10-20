@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Belkin Neoprene Sleeve For MacBook Air - F8N065BLK; brand: belkin; description: Belkin Neoprene Sleeve For MacBook Air - F8N065BLK/ Slim And Lightweight/ High Quality Neoprene Protective Case/ Asymmetrical Zipper/ Black Finish\n\nCandidates:\n1. name: Belkin Folio for iPod touch - F8Z373; brand: Belkin; description: Leather - Black; price: $19.99\n2. name: Belkin CushTop - F8N044-GRN; brand: Belkin; description: - Green\n3. name: Belkin Orange Cushtop; brand: Belkin\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 331,
+  "output_tokens": 34
+ }
+}

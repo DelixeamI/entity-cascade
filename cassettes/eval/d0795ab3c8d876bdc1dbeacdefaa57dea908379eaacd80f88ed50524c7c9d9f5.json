@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Danby White Countertop Dishwasher - DDW497WH; brand: danby; description: Danby White Countertop Dishwasher - DDW497WH/ 4 Place Settings/ Quick Connect To Any Kitchen Tap/ Automatic Detergent And Rinse Agent Dispenser/ Quiet Operation/ 5 Wash Cycles/ Durable Stainless Steel Spray Arm And Interior/ White Finish; price: $222.00\n\nCandidates:\n1. name: DDW1805W 18-in. Portable Dishwasher (White, Energy Star); brand: Danby; price: $474.36\n2. name: GE GSD4000NWW Dishwasher with 5 Wash Cycles STD TUB ESTAR ( White) - gsd4000nww; brand: GE; price: $313.29\n3. name: LG Electronics 24' Washer/Dryer Combo: White; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 389,
+  "output_tokens": 34
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Belkin AC Anywhere - F5C400300W; brand: belkin; description: Belkin AC Anywhere - F5C400300W/ Mobile Power Adapter For Your Vehicle/ Powers Portable Devices Using A 300-Watt Power Inverter/ 2 AC Outlets/ Converts DC Power To AC Power From A Cigarette Lighter Socket/ Automatic Overheat Shut-Off/ Low-Battery Alarm/ Overload Protection/ Replaceable Fuse Included...\n\nCandidates:\n1. name: Belkin Hi-Speed USB 2.0 7-Port Hub - F5U237-APL-S; brand: Belkin; description: USB 2.0 7-PORT HUB/APPLE #TB857LL/A\n2. name: Belkin CushTop - F8N044-GRN; brand: Belkin; description: - Green\n3. name: Belkin CushTop - F8N044-SLV; brand: Belkin; description: - Silver\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 400,
+  "output_tokens": 34
+ }
+}

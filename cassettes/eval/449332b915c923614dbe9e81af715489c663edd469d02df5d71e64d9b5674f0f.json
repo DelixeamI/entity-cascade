@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Blu-Ray Disc Player - BDPS550; brand: sony; description: Sony Blu-Ray Disc Player - BDPS550/ Decode Dolby TrueHD And dts HD Internally/ Full HD 1080 Video Output/ 24p True Cinema/ DVD Upscaling To 1080p Via HDMI/ BRAVIA Theatre Sync (HDMI-CEC)/ BD/DVD/CD Playback And AVCHD With x.v. Color Output/ Dolby Digital Plus Decoding/ Backlit Remote/ Glass Front Fi...\n\nCandidates:\n1. name: Sony HESV1000 Blu-ray Player/Recorder; brand: Sony; description: DVD+RW, DVD-RW, BD-RE, CD-RW, xD-Picture Card, CompactFlash (CF), Secure Digital (SD), Mini Secure Digital (miniSD), Memory Stick, Memory Stick Duo, Memory Stick PRO - BD Video, DVD Video, JPEG, MP3, CD-DA, MPE\n2. name: Samsung BDP-1500 Blu-ray DVD Player - BDP1500; brand: Samsung; price: $218.20\n3. name: Sony DVP-NS700H/B DVD Player; brand: Sony; description: DVD-RW, DVD+RW, DVD-R, DVD+R, CD-RW - DVD Video, CD-DA, MP3, JPEG, SVCD, Video CD Playback - 1 Disc(s) - Progressive Scan - Black\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number Sony BDPS550.\"}",
+  "input_tokens": 499,
+  "output_tokens": 35
+ }
+}

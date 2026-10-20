@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Bud Style Headphones In Silver - MDRED12LPSLV; brand: sony; description: Sony Bud Style Headphones In Silver - MDRED12LPSLV/ 16mm Drivers/ Crisp Sound/ Neodymium Magnets Offer Powerful Sound Reproduction/ Convenient Cord Slider Reduces Tangles/ 3.9 Ft. Cord Length/ Frequency Response Of 8-22,000Hz/ Silver Finish; price: $14.00\n\nCandidates:\n1. name: Bass Lover Earbuds Slver - MDRED12LP/SLV; brand: Sony; price: $10.99\n2. name: Bass Lover Earbuds Red - MDRED12LP/RED; brand: Sony; price: $10.99\n3. name: Sony MDREX81LP Comfort Fit Ear Hanger Headphones- Choose Color (Black); brand: Sony\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact brand and model number.\"}",
+  "input_tokens": 377,
+  "output_tokens": 30
+ }
+}

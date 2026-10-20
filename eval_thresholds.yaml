@@ -1,0 +1,15 @@
+# CI gate on the fixture slice (tests/test_gate.py): 50 Abt rows, 25 of them in test.
+# Limits sit below the values measured on the fixture, with headroom for CPU float noise and
+# for the tiny split (one row is 4 points). They catch real regressions, not small drifts.
+# Raise them when the pipeline genuinely improves.
+#
+# The LLM cassettes behind this gate (tests/cassettes) come from the heuristic test double,
+# so system_* limits guard the plumbing, not LLM quality.
+candidate_recall_at_20_min: 0.90
+top1_reranker_features_min: 0.85
+auto_zone_share_min: 0.60
+auto_zone_precision_min: 0.80
+system_precision_min: 0.80
+system_recall_min: 0.90
+human_share_max: 0.30
+require_llm_run: true

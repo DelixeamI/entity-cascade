@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Denon 7.1 Channel Home Theater MultiMedia A/V Receiver With Networking In Black - AVR3808CI; brand: denon; description: Denon 7.1 Channel Home Theater MultiMedia AV Receiver With Networking In Black - AVR3808CI/ 130 Watts x 7 Channels/ Fully Assignable Channels For Bi-Amping/ Rear Panel RS-232C And Ethernet Ports/ Network Capable/ XM Ready Tuning/ Dolby TrueHD And DTS-HD Master Audio/ Expanded HDMI v1.3a Ports/ Dual...; price: $1,699.99\n\nCandidates:\n1. name: Denon DHT-589BA Home Theater System; brand: Denon; description: , A/V Receiver, 5.1 Speakers - Dolby Pro Logic II, DTS; price: $448.80\n2. name: Denon AVR-4308CI A/V Receiver - AVR4308CI; brand: Denon; description: Dolby Pro Logic IIx, Dolby Digital Surround, DTS-ES, DTS Neo:6, DTS 96/24, Neural SurroundFM, AM, XM; price: $1,849.77\n3. name: Denon AVR-1609 A/V Receiver - AVR1609; brand: Denon; description: Dolby Digital Surround, Dolby Pro Logic IIx, DTS-ES, DTS Neo:6, DTS 96/24FM, AM; price: $348.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates match the brand and model number of the price-list item.\"}",
+  "input_tokens": 526,
+  "output_tokens": 36
+ }
+}

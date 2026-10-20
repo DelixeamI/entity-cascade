@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Silver Cyber-Shot Digital Camera - DSCS750; brand: sony; description: Sony Silver Cyber-Shot Digital Camera - DSCS750/ 7.2 Megapixel Super HAD CCD/ 2.5' LCD Display/ 3x Optical Zoom/ High Sensitivity Mode/ Auto Focus/ 22 MB Internal Memory/ Face Detection/ Burst Mode/ Convenient Photo Modes/ Beginner-Friendly Function Guide/ Silver Finish\n\nCandidates:\n1. name: Sony Cyber-shot DSC-W150 Digital Camera - Silver - DSCW150; brand: Sony; description: 8.1 Megapixel - 16:9 - 2x Digital Zoom - 2.7' Active Matrix TFT Color LCD; price: $129.99\n2. name: Sony Cyber-shot DSC-W120 Digital Camera - Silver - DSCW120; brand: Sony; description: 16:9 - 2x Digital Zoom - 2.5' Active Matrix TFT Color LCD; price: $106.42\n3. name: Sony Cyber-shot DSC-W170 Digital Camera - Silver - DSCW170; brand: Sony; description: 10.1 Megapixel - 16:9 - 2x Digital Zoom - 2.7' Active Matrix TFT Color LCD\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The price-list item has a different model number and specifications compared to the candidates.\"}",
+  "input_tokens": 473,
+  "output_tokens": 36
+ }
+}

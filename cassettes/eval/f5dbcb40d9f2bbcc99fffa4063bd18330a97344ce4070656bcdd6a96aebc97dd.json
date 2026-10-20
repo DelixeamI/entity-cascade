@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony 4GB Memory Stick PRO Duo Mark 2 Media Card - MSMT4G; brand: sony; description: Sony 4GB Memory Stick PRO Duo Mark 2 Media Card - MSMT4G/ 160 Mbps Transfer Speed/ Ideal For AVCHD Recording/ 3.66GB Actual Capacity\n\nCandidates:\n1. name: Sony 16GB Memory Stick PRO Duo Card (Mark 2) - MSMT16G; brand: Sony; description: 16 GB; price: $110.99\n2. name: Sony 2GB Memory Stick PRO Duo Card - MSMT2G; brand: Sony; description: 2 GB; price: $15.99\n3. name: Sony 1GB Memory Stick PRO Duo Card - MSMT1G; brand: Sony; description: 1 GB; price: $13.41\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Candidates have different model numbers and capacities\"}",
+  "input_tokens": 372,
+  "output_tokens": 27
+ }
+}

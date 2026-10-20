@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung 46' Series 5 LCD Black Flat Panel HDTV - LN46A550; brand: samsung; description: Samsung 46' Series 5 LCD Black Flat Panel HDTV - LN46A550/ Full 1080p High Definition Resolution/ 16:9 Widescreen Aspect Ratio/ 30,000:1 Dynamic Contrast Ratio/ 5ms Response Time/ SRS TruSurround XT Audio/ Built-In Digital Tuner (ATSC/Clear QAM)/ Picture-In-Picture/ Sound Leveler/ 3 HDMI Slots/ Swiv...\n\nCandidates:\n1. name: Samsung LN46A650 46' LCD TV; brand: Samsung; description: Samsung LN46A650 - 46' 1080p LCD HDTV - 50,000:1 Dynamic Contrast Ratio - 120Hz - 4ms Response Time; price: $1,599.98\n2. name: Samsung 9 Series LN46A950 46' LCD TV; brand: Samsung; description: 46' - ATSC, NTSC - 181 Channels - 16:9 - 1920 x 1080 - Surround - HDTV - 1080p; price: $2,699.98\n3. name: Samsung LN46A860 46' LCD TV (Widescreen, 1920x1080, 50000:1, HDTV); brand: Samsung; price: $1,889.98\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates have the same model number LN46A550.\"}",
+  "input_tokens": 546,
+  "output_tokens": 37
+ }
+}

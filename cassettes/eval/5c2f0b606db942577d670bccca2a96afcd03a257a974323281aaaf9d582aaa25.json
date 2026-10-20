@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Nyko PlayStation 3 Dual Charger AC - 743840830153; brand: nyko; description: Nyko PlayStation 3 Dual Charger AC - 743840830153/ Charge 2 Wireless PS3 Controllers From A Standard Wall Outlet/ Collapsable Prongs For Easy Storage/ Charges Other Mini USB Devices; price: $24.99\n\nCandidates:\n1. name: Nyko PS3 Dual AC Charger - 83015; brand: Nyko\n2. name: PlayStation 3 ChargeLink USB Charging Cable by Nyko - 83000; brand: Nyko\n3. name: PlayStation 2 DUALSHOCK Analog Controller - Green; brand: Sony Computer Electronic\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 344,
+  "output_tokens": 25
+ }
+}

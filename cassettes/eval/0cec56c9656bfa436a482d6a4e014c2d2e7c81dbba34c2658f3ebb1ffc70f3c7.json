@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Linksys Dual-Band Wireless-N Notebook Adapter - WPC600N; brand: linksys; description: Linksys Dual-Band Wireless-N Notebook Adapter - WPC600N/ High-Speed Wireless-N (Draft 802.11n) Networking/ MIMO Technology/ Operates In The 2.4 And 5GHz Radio Bands/ Connects To Wireless-G, B, And A Networks; price: $69.00\n\nCandidates:\n1. name: Linksys WUSB600N Dual-Band Wireless-NUSB Network Adapter - WUSB600N; brand: LINKSYS; description: Linksys Dual-Band Wireless-N USB Network Adapter\n2. name: Linksys WRT610N Simultaneous Dual-N Band Wireless Router; brand: LINKSYS\n3. name: Linksys WGA600N Wireless Gaming Adapter; brand: LINKSYS; description: 54Mbps\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 378,
+  "output_tokens": 30
+ }
+}

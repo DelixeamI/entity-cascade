@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung 50' Black Flat Panel Series 4 Plasma HDTV - PN50A450; brand: samsung; description: Samsung 50' Black Flat Panel Series 4 Plasma HDTV - PN50A450/ 1366 x 768 True 720p Resolution/ 1,000,000:1 Dynamic Contrast Ratio/ FilterBright Anti-Glare And Anti Burn-In Technology/ Built-In HDTV Tuner (ATSC/NTSC) With Clear QAM/ SRS TruSurround XT/ 3D HD Ready/ Swivel Stand/ Black Finish\n\nCandidates:\n1. name: Samsung PN50A550 50' Plasma TV; brand: Samsung; description: Samsung PN50A550 - 50' Widescreen 1080p Plasma HDTV - 1,000,000:1 Dynamic Contrast Ratio - Piano Black; price: $1,499.98\n2. name: Samsung PN42A450 - 42' Widescreen 720p Plasma HDTV - 100,000:1 Dynamic Contrast Ratio - Piano Black - PN42A450P; brand: Samsung; price: $899.99\n3. name: Samsung PN50A650 50' 1080p Plasma HDTV - 1,000,000:1 Dynamic Contrast Ratio - Anti Burn-in Technology; brand: Samsung; price: $1,699.98\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact brand and model number PN50A450.\"}",
+  "input_tokens": 531,
+  "output_tokens": 37
+ }
+}

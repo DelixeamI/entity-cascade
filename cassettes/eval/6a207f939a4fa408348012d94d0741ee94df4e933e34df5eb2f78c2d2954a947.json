@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Linksys Compact Wireless-G USB Adapter - WUSB54GC; brand: linksys; description: Linksys Compact Wireless-G USB Adapter - WUSB54GC/ Connects Your Desktop Or Notebook To A Wireless Network At Up To 54Mbps When Used With A USB 2.0 Port/ Compatible With Wireless-B Networks (At 11Mbps)/ Protected By WPA and Up To 128-Bit Data Encryption; price: $39.00\n\nCandidates:\n1. name: Linksys Wireless-G Range Expander Wireless Bridge - WRE54G; brand: LINKSYS; description: 54Mbps\n2. name: Linksys G Wireless-G WET54G Wireless Bridge; brand: LINKSYS; description: 54Mbps - 1 x 10/100Base-TX\n3. name: Linksys WGA600N Wireless Gaming Adapter; brand: LINKSYS; description: 54Mbps\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates have the same model number WUSB54GC.\"}",
+  "input_tokens": 383,
+  "output_tokens": 35
+ }
+}

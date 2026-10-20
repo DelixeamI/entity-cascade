@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Home Entertainment Server In Black - HESV1000; brand: sony; description: Sony Home Entertainment Server In Black - HESV1000/ 200 BD/DVD/CD Changer With Full HD 1080P Video Output/ 500GB Hard-Drive/ Store Up To 137 Hours Of Video, 2000 Music Albums, Or 20,000 Photos/ XMB (XrossMediaBar) Menu/ BRAVIA Theatre Sync (HDMI-CEC)/ AVC-HD With x.v.Color Output/ Dolby Digital And...\n\nCandidates:\n1. name: Sony HESV1000 Blu-ray Player/Recorder; brand: Sony; description: DVD+RW, DVD-RW, BD-RE, CD-RW, xD-Picture Card, CompactFlash (CF), Secure Digital (SD), Mini Secure Digital (miniSD), Memory Stick, Memory Stick Duo, Memory Stick PRO - BD Video, DVD Video, JPEG, MP3, CD-DA, MPE\n2. name: Sony PSP Core System (Piano Black) (Slim Model with AV Video Out Port) - 98510; brand: Sony\n3. name: Sony BRAVIA DAV-HDX279WC Home Theater System; brand: Sony; description: DVD Player, 6.1 Speakers - 5 Disc(s) - Progressive Scan - Dolby Digital, DTS, Dolby Pro Logic II - Black; price: $318.01\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.0, \"reason\": \"No candidate matches the brand and model number HESV1000.\"}",
+  "input_tokens": 509,
+  "output_tokens": 36
+ }
+}

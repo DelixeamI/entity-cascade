@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Onkyo THX Ultra 2 Plus Certified 7.1 Channel Home Theater Black Receiver - TXSR806B; brand: onkyo; description: Onkyo TXSR806 THX Ultra 2 Plus Certified 7.1 Channel Home Theater Black Receiver - TXSR806B/ 130 Watts Per Channel/ All Discrete Circuitry/ Dolby Digital Plus, Dolby TrueHD And DTS-HD Decoding/ HDMI Version v1.3a Repeater/ DSD Processing/ Independent Crossover/ Audyssey Dynamic EQ/ Accurate Speaker...\n\nCandidates:\n1. name: Onkyo HTS5100 Home Theater System - HTS5100B; brand: Onkyo; description: , A/V Receiver, 7.1 Speakers - 1200W RMS - Dolby Pro Logic IIx, Dolby Digital, Dolby Digital EX, DTS, DTS-ES, DTS Neo:6, DTS 96/24 - Black; price: $478.72\n2. name: Onkyo TX-NR906 A/V Receiver - TXNR906B; brand: Onkyo; description: THX Ultra 2, Dolby Digital Plus, Dolby TrueHD, DTS-HD, Neural SurroundFM, AM; price: $1,497.99\n3. name: Onkyo TX-SR706 A/V Receiver - TXSR706B; brand: Onkyo; description: Dolby Digital Plus, Dolby TrueHD, DTS-HD, THX Select 2FM, AM, XM; price: $595.97\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact brand and model number TXSR806B.\"}",
+  "input_tokens": 547,
+  "output_tokens": 36
+ }
+}

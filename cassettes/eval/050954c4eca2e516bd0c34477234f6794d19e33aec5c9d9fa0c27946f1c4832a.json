@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Apple USB Power Adapter - MB352LLB; brand: apple; description: Apple USB Power Adapter - MB352LLB/ Compact/ Convenient/ Charges The iPod Anywhere Without A Computer/ Compatible With Any iPods And iPhone With A Dock Connector/ White Finish; price: $29.00\n\nCandidates:\n1. name: Apple Time Capsule Network Hard Drive - MB277LL/A; brand: Apple; description: 1TB - Type A USB; price: $439.00\n2. name: Apple 8GB iPod nano Pink (4th Generation) - MB735LL/A; brand: Apple; price: $146.75\n3. name: Apple 8x DVDRW Drive - MB397G/A; brand: Apple; description: (Double-layer) - DVD-RAM/R/RW - 8x 8x 8x (DVD) - 24x 16x 24x (CD) - USB - External; price: $95.71\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates match the brand and model number of the price-list item.\"}",
+  "input_tokens": 408,
+  "output_tokens": 36
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Audiovox XpressR XM Satellite Radio Receiver - XMCK20P; brand: audiovox; description: Audiovox XpressR XM Satellite Radio Receiver - XMCK20P/ 6 Line Display/ Split Screen For Up To 5 Channels Simultaneously/ Customizable Sports Ticker Feature/ GameSelect And TuneSelect Features/ Universal Connector/ Pause And Replay/ Plug & Play Dock/ Sleep Mode/ Black Finish\n\nCandidates:\n1. name: Audiovox XMCK5P EXPRESSEZ Satellite Radio - XMCK5P; brand: Audiovox; description: Audiovox Xpress EZ XM Radio Receiver with Vehicle Kit\n2. name: Audiovox CNP2000 XM Mini-Tuner; brand: Audiovox; description: XM Satellite Radio Receiver\n3. name: Audiovox XMH10 Home Docking Kit; brand: Audiovox; description: XM Satellite Radio Receiver\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number XMCK20P\"}",
+  "input_tokens": 365,
+  "output_tokens": 31
+ }
+}

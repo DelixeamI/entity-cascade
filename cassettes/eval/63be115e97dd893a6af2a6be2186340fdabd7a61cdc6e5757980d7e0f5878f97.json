@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon PowerShot Black 10 Megapixel Digital Camera - SX10IS; brand: canon; description: Canon PowerShot Black 10 Megapixel Digital Camera - SX10IS/ 20x Optical Zoom/ Optical Image Stabilizer/ 10.0 Megapixel/ 2.5' Vari-Angle LCD/ DIGIC 4 Image Processor/ Face Detection Self-Timer/ Intelligent Contrast Correction/ MovieSnap Mode/ Print/Share Button/ Black Finish\n\nCandidates:\n1. name: Canon PowerShot SX10 IS Digital Camera - 2665B001; brand: Canon; description: Canon PowerShot SX10 IS 10 Megapixel Digital Camera w/ 20x Optical Zoom, 28mm Wide Lens, 2.5' LCD, Motion Detection, & Red Eye Correction; price: $339.88\n2. name: Canon PowerShot SX110 IS Digital Camera - Silver - 2666B001; brand: Canon; description: Canon PowerShot SX110 IS 9 Megapixel Digital Camera w/ 10x Optical Zoom, 3' LCD, ISO 1600, Optical Image Stabilizer - Silver\n3. name: Canon PowerShot A1000 IS Digital Camera - Gray - 3210B001; brand: Canon; description: Canon PowerShot A1000 IS 10 Megapixel Digital Camera w/ 4x Optical Zoom, 2.5 LCD, Optical Image Stabilizer, & Face Detection - Gray\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number SX10IS\"}",
+  "input_tokens": 517,
+  "output_tokens": 29
+ }
+}

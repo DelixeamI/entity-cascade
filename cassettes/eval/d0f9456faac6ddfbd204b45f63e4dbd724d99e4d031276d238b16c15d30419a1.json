@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Pioneer XM Digital Satellite Tuner for Pioneer Headunits - GEXP920XM; brand: pioneer; description: Pioneer XM Digital Satellite Tuner For Pioneer Headunits - GEXP920XM/ SAT Radio Ready/ XM Ready/ Built-In FM Modulator/ 18- Station/ 6- Button Presets/ Magne Mount Installation; price: $98.00\n\nCandidates:\n1. name: Pioneer GEX-P10HD HD Radio Add-on Tuner for Select In-dash Pioneer Receivers; brand: Pioneer\n2. name: Pioneer Direct Control Cable - CD-IU230V; brand: Pioneer; description: 1 x Proprietary - 1 x Type A USB, 3 x RCA; price: $41.44\n3. name: Pioneer CD-R55 Wireless Remote for Avic-D3/4900DVD - CDR55; brand: Pioneer; price: $14.05\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 384,
+  "output_tokens": 30
+ }
+}

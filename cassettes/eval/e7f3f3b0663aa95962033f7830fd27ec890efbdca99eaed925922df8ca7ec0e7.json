@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung 52' Series 5 LCD Black Flat Panel HDTV - LN52A550; brand: samsung; description: Samsung 52' Series 5 LCD Black Flat Panel HDTV - LN52A550/ Full 1080p High Definition Resolution/ 16:9 Widescreen Aspect Ratio/ 30,000:1 Dynamic Contrast Ratio/ 5ms Response Time/ SRS TruSurround XT Audio/ Built-In Digital Tuner (ATSC/Clear QAM)/ Picture-In-Picture/ Sound Leveler/ 3 HDMI Slots/ Swiv...\n\nCandidates:\n1. name: Samsung 5 Series LN37A550 37' LCD TV; brand: Samsung; description: Samsung LN37A550 - 37' Widescreen 1080p LCD HDTV - 15,000:1 Dynamic Contrast Ratio - 5ms Response Time - Piano Black; price: $944.00\n2. name: Samsung LN52A650 52' LCD TV; brand: Samsung; description: Samsung LN52A650 - 52' 1080p LCD HDTV - 50,000:1 Dynamic Contrast Ratio - 120Hz - 4ms Response Time; price: $1,895.00\n3. name: LN52A860 52' LCD TV (Widescreen, 1920x1080, HDTV); brand: Samsung; price: $2,499.99\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Model numbers do not match any candidates exactly.\"}",
+  "input_tokens": 535,
+  "output_tokens": 29
+ }
+}

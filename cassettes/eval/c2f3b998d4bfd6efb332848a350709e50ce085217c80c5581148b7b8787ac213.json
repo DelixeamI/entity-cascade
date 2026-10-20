@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nHow to decide:\n1. Find the model number (letters and digits, e.g. PSLX350H or MDR-J10) in the price-list item.\n2. A candidate with the same model number is the same product, ignoring case, dashes and spaces,\n   and ignoring a colour or variant suffix such as /BLUE or BK/WH on an otherwise identical base\n   model. Different wording, descriptions or prices do not matter.\n3. If no candidate shares the model number, pick one only when brand and product type are the\n   same and the names share distinctive words. Otherwise answer \"none\".\n4. Never answer \"none\" only because the wording or the price differs.\nConfidence: 0.9 or more when the model number matches; 0.6 to 0.8 when brand and product type\nmatch but no model number can be compared; below 0.5 when you are unsure.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Bud Style Headphones In Silver - MDRED12LPSLV; brand: sony; description: Sony Bud Style Headphones In Silver - MDRED12LPSLV/ 16mm Drivers/ Crisp Sound/ Neodymium Magnets Offer Powerful Sound Reproduction/ Convenient Cord Slider Reduces Tangles/ 3.9 Ft. Cord Length/ Frequency Response Of 8-22,000Hz/ Silver Finish; price: $14.00\n\nCandidates:\n1. name: Bass Lover Earbuds Slver - MDRED12LP/SLV; brand: Sony; price: $10.99\n2. name: Bass Lover Earbuds Red - MDRED12LP/RED; brand: Sony; price: $10.99\n3. name: Sony MDREX81LP Comfort Fit Ear Hanger Headphones- Choose Color (Black); brand: Sony\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 0.9, \"reason\": \"Model number MDRED12LP matches, ignoring color suffix\"}",
+  "input_tokens": 502,
+  "output_tokens": 32
+ }
+}

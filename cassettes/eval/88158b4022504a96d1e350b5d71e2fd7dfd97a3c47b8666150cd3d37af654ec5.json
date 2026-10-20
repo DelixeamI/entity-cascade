@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: OmniMount 37' - 63' Ultra Low Profile Series Large Flat Panel TV Black Mount - ULPTLBK; description: OmniMount 37' - 63' Ultra Low Profile Series Large Flat Panel TV Black Mount - ULPTLBK/ Ultra Low Profile Design/ Built-In Kickstand/ Universal Rails/ Tension Adjustment/ Sliding Lateral On-Wall Adjustment/ Lift N? Lock For Easy Installation/ Anti-Theft Security Feature/ Black Finish\n\nCandidates:\n1. name: OmniMount Ultra Low Profile ULPT-L Flat Panel Wall Mount - ULPT-L A; brand: OMNIMOUNT SYSTEMS, INC; description: 200 lb - Anthracite; price: $278.95\n2. name: OmniMount TV Top Shelf Mount - CCH1P; brand: OMNIMOUNT SYSTEMS, INC; description: Steel - 30 lb\n3. name: Peerless Universal Tilt Wall Mount; brand: Peerless; description: Peerless Smart Mount ST660P Universal Tilt Wall Mount for 37' to 60' Screens (Black) up to 200lbs\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 425,
+  "output_tokens": 30
+ }
+}

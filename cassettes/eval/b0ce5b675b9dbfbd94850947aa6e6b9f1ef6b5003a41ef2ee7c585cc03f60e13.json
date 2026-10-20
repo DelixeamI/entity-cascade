@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nHow to decide:\n1. Find the model number (letters and digits, e.g. PSLX350H or MDR-J10) in the price-list item.\n2. A candidate with the same model number is the same product, ignoring case, dashes and spaces,\n   and ignoring a colour or variant suffix such as /BLUE or BK/WH on an otherwise identical base\n   model. Different wording, descriptions or prices do not matter.\n3. If no candidate shares the model number, pick one only when brand and product type are the\n   same and the names share distinctive words. Otherwise answer \"none\".\n4. Never answer \"none\" only because the wording or the price differs.\nConfidence: 0.9 or more when the model number matches; 0.6 to 0.8 when brand and product type\nmatch but no model number can be compared; below 0.5 when you are unsure.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Hands Free Headset  - KXTCA92; brand: panasonic; description: Panasonic Hands Free Headset - KXTCA92/ Comfort Fit With Fold Design/ Noise Cancelling Microphone/ Volume Control/ Mute/ Standard 2.5mm Connection; price: $25.00\n\nCandidates:\n1. name: Panasonic KX-TGA670B Cordless Handset; brand: Panasonic; description: Panasonic KX-TGA670B Additional Handset for PANKXTG6700B\n2. name: Panasonic KX-TGA450B Cordless Handset; brand: Panasonic; description: Panasonic KX-TGA450B Additional Handset for PANKXTG4500B\n3. name: Panasonic KX-TGA820B Cordless Handset; brand: Panasonic; description: Black; price: $39.76\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.2, \"reason\": \"No matching model number found\"}",
+  "input_tokens": 501,
+  "output_tokens": 25
+ }
+}

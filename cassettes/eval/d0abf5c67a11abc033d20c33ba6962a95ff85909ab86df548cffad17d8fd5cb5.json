@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Escort Passport Radar And Laser Detector - Black Finish - 8500; brand: escort; description: Escort Passport X50 Radar And Laser Detector - 8500/ X-Band, K-Band, Ka-Band Operating Bands/ AlGaAs 280 LED Matrix/Text Display Type/ 3-Level Dimming, Plus Dark Mode/ Auto Mute/ City Mode Sensitivity/ Compact Size/ Red Display; price: $313.95\n\nCandidates:\n1. name: Escort X50 Passport 8500 Radar Detector - High Intensity Red Display - 8500X50RED; brand: Escort; price: $252.00\n2. name: Escort Passport 9500ix Radar/Laser Detector; brand: Escort; price: $439.99\n3. name: Cordless Solo S2 Radar/Laser Detector - 010ES20A; brand: Escort; price: $279.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number 8500\"}",
+  "input_tokens": 396,
+  "output_tokens": 30
+ }
+}

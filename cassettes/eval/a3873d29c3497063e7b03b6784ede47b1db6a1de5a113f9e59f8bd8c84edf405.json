@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony 8cm MiniDVD-R Camcorder Media 3 Pack - 3DMR30R1H; brand: sony; description: Sony 8cm MiniDVD-R Camcorder Media 3 Pack - 3DMR30R1H/ Record Up To 30 Minutes Of Video On These Write-Once Discs/ 1.4GB Storage Capacity/ Compatible With MiniDVD Camcorders\n\nCandidates:\n1. name: Sony Mini DVD-R Media - 3DMR30L1H; brand: Sony; description: 1.4GB - 3 Pack; price: $6.99\n2. name: Sony Handycam DCR-SR45 Digital Camcorder - DCRSR45; brand: Sony; description: 16:9 - 2.7' Hybrid LCD; price: $304.99\n3. name: Sony Handycam HDR-SR11 High Definition Digital Camcorder - HDRSR11; brand: Sony; description: 16:9 - 3.2' Color LCD; price: $666.41\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 424,
+  "output_tokens": 30
+ }
+}

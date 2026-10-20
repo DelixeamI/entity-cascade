@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Terk XM Outdoor Home Antenna - Grey Finish - XM6; brand: xm; description: Terk XM Outdoor Home Antenna - XM6/ Universal Mounting Roof, Wall Or Mast/ For Use With Single-Input Receivers/ Connects RG6 Cable For Easy Routing Up To 100 Ft. (Optimal Disatnce 75 Ft.); price: $80.00\n\nCandidates:\n1. name: Audiovox XM6 Outdoor Home Antenna - XM-6; brand: Terk Technologies\n2. name: Audiovox Satellite Radio Tuner; brand: Xm; description: TERK XMRVRFM002 CommanderMT Universal In-Car XM Receiver\n3. name: Sirius Outdoor Home Antenna - 14240; brand: Sirius; description: 42 dBi - SMB\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches both brand and model number exactly.\"}",
+  "input_tokens": 356,
+  "output_tokens": 30
+ }
+}

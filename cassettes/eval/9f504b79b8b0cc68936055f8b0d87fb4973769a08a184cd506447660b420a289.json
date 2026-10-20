@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Microsoft Office Home And Student 2007 For Windows Vista - 79G00007; brand: microsoft; description: Microsoft Office Home And Student 2007 For Windows Vista- 79G00007/ Included Excel 2007, OneNote 2007, PowerPoint 2007, Word 2007/ Results-Oriented User Interface/ SmartArt Diagramming And Enhanced Charting Capabilities/ Enhanced Reliability And Security Features/ Document Inspector\n\nCandidates:\n1. name: Microsoft Office 2007 Standard - 021-07746; brand: Microsoft; price: $319.99\n2. name: Microsoft Office:mac 2008 Home and Student Edition - GZA-00006; brand: Microsoft; description: Office Mac Home & Student 2008\n3. name: Elgato EyeTV 250 Plus TV Tuner - 10020780; brand: ELGATO SYSTEMS; description: Elgato EyeTV 250 Plus Video Converter and TV Tuner for Analog and HDTV Reception\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 435,
+  "output_tokens": 30
+ }
+}

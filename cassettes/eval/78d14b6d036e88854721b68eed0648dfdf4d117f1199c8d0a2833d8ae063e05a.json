@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic 5.8GHz Add-On Handset For The KXTG6700B Phone System - Black Finish - KXTGA670B; brand: panasonic; description: Panasonic 5.8GHz Add-On Handset For The KXTG6700B 2 Line Phone System - KXTGA670B/ 5.8 GHz Digital Spread Spectrum Operation/ 3-Line Backlit LCD Display On Handset/ 50 Caller ID Memory/ Voice-Mail Message Waiting Indicator/ Black Finish\n\nCandidates:\n1. name: Panasonic KX-TGA670B Cordless Handset; brand: Panasonic; description: Panasonic KX-TGA670B Additional Handset for PANKXTG6700B\n2. name: Panasonic KX-TG6700B Cordless Telephone; brand: Panasonic; description: Panasonic KX-TG6700B 5.8 GHz 2-Line FHSS GigaRange Expandable Digital Cordless Phone with Answering System & Call Waiting Caller ID; price: $106.14\n3. name: Panasonic KX-TG6702B Cordless Telephone - KX-TG6702B; brand: Panasonic; description: Panasonic 5.8GHz 2 Line Expandable Phone With Extra Handset; price: $159.92\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number KXTGA670B\"}",
+  "input_tokens": 473,
+  "output_tokens": 32
+ }
+}

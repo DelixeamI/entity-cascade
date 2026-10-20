@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Boston Acoustics Duo-I AM/FM Clock Radio With iPod Dock - HDUOIMDNT; brand: boston acoustics; description: Boston Acoustics Duo-I AM/FM Clock Radio With iPod Dock - HDUOIMDNT/ Integrated iPod Dock/ Precision AM/FM Stereo Tuner/ 3 1/2' Dual High Performance Full-Range Speakers/ BassTrac Audio Processing/ 2 Auxiliary Inputs/ High Contrast Display/ 10 FM & 5 AM Station Presets/ 360º Snooze Bar/ Remote Contr...; price: $199.00\n\nCandidates:\n1. name: Boston Acoustics Horizon Duo-i AM/FM Stereo Radio - HDUOIMDNT; brand: Boston Acoustics; description: 5 x AM, 10 x FM; price: $135.52\n2. name: Boston Acoustics Horizon Solo AM/FM Radio - HSOLOMNDT; brand: Boston Acoustics; price: $90.00\n3. name: SONY IPOD/PHONE DOCK CLOCK RADIO BLACK NIC - ICFC1IPMK2WHI; brand: Sony; price: $61.42\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number HDUOIMDNT\"}",
+  "input_tokens": 442,
+  "output_tokens": 31
+ }
+}

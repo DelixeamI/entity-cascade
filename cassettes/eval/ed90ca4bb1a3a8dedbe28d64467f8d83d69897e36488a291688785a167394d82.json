@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Black DVD Recorder And VHS Combo Player - RDRVX560; brand: sony; description: Sony Black DVD Recorder And VHS Combo Player - RDRVX560/ Multiformat DVD Compatible/ HDMI Output With 1080p,1080i,720p Upscaling/ USB One Touch Dubbing/ 4 Video Head Stereo VHS With 19 Micron Heads/ Virtual Surround Sound For DVD With Stereo TV Speakers/ Black Finish; price: $219.00\n\nCandidates:\n1. name: Sony RDRVXD655 DVD/VCR Combo; brand: Sony; description: S-VHS, VHS, DVD+RW, DVD-RW, DVD+R, DVD-R, DVD-RAM, CD-RW - DVD Video, Video CD, SVCD, CD-DA, JPEG, MP3, SQPB Playback - 1 Disc(s) - Progressive Scan - 14.46Hour Recording; price: $261.96\n2. name: Sony RDR-GX360 DVD Player/Recorder; brand: Sony; description: DVD+RW, DVD-R, DVD-RAM, CD-RW - DVD Video, CD-DA, Video CD Playback - 1 Disc(s) - Progressive Scan; price: $109.99\n3. name: Sony SLVD380P DVD/VCR Combo; brand: Sony; description: VHS, DVD-R, CD-R - DVD Video, MP3 Playback - Progressive Scan\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number RDRVX560.\"}",
+  "input_tokens": 505,
+  "output_tokens": 35
+ }
+}

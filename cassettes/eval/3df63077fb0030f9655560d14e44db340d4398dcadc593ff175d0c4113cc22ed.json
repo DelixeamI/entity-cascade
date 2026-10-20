@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony EX Ear Bud Headphones In White - MDREX32LPWHI; brand: sony; description: Sony EX Ear Bud Headphones In White - MDREX32LPWHI/ 9mm Drivers/ Deep Bass Sound/ Neodymium (400kJ/m3) Magnets Offer Powerful Bass Sound Reproduction/ 3.9 Ft. Cord Length/ Frequency Response Of 6-23,000Hz/ White Finish; price: $24.00\n\nCandidates:\n1. name: Sony Fontopia Earbuds - MDREX81LPB; brand: Sony; description: Sony MDR-EX81LP/B Stereo Earphones - Black; price: $34.88\n2. name: Ex Series Earbuds Wht - MDR EX32LP/WHI; brand: Sony; price: $16.99\n3. name: Ex Series Earbuds Black - MDR EX32LP/BLK; brand: Sony; price: $15.65\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches both brand and model number exactly.\"}",
+  "input_tokens": 405,
+  "output_tokens": 30
+ }
+}

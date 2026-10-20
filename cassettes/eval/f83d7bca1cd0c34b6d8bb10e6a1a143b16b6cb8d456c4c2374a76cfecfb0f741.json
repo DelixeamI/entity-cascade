@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Lowepro Digital Camera Case In Black - EDIT100BK; brand: lowepro; description: Lowepro Edit 100 Digital Camera Case In Black - EDIT100BK/ Designed For Digital Cameras/ Includes Lots Of Accessory Pockets/ Soft, Lining, Padded Interior/ Adjustable Divider/ Water-Resistant Nylon And Microfiber\n\nCandidates:\n1. name: Lowepro Edit 100 Case for Camcorder - Nylon, MicroFiber - Black (Black); brand: Lowepro\n2. name: Lowepro Rezo 15 Camera Case - MicroFiber, Ripstop Nylon - Black (Black); brand: Lowepro\n3. name: Nikon Digital Camera Leather Case - 5811; brand: Nikon; description: Leather - Black; price: $7.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number EDIT100BK\"}",
+  "input_tokens": 358,
+  "output_tokens": 30
+ }
+}

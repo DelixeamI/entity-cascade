@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon Optura/Elura Accessory Kit - ACCESSORYKIT; brand: canon; description: Canon Optura/Elura Accessory Kit - ACCESSORYKIT/ BP-2L14 Battery/ Carrying Case/ Mini DV Tape.\n\nCandidates:\n1. name: Canon Battery and Charger Kit - 1169B001; brand: Canon; description: Power Accessory Kit\n2. name: Canon Mini DV Camcorder Starter Kit - 9582A008; brand: Canon; description: Camcorder Starter Kit; price: $69.95\n3. name: TOMTOM GPS Receiver Accessory Kit - 9N00.101; brand: Tom Tom; description: TomTom Windshield Mount and USB Car Charger; price: $35.64\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 354,
+  "output_tokens": 34
+ }
+}

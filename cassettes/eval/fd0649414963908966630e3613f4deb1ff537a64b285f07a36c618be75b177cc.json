@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Oregon Scientific AT18 Wearable Waterproof Action Camcorder - ATC2000; brand: oregon scientific; description: Oregon Scientific AT18 Wearable Waterproof Action Camcorder - ATC2000/ Full-Function, Hands-Free, Digital Recording/ Waterproof Up To 3 Meters/ Shock-Resistant For Extreme Conditions/ Mounts Easily/ 640 X 480 VGA Resolution At 30 Frames Per Second/ USB And RCA Cables Included/ SD Card Expansion Up T...\n\nCandidates:\n1. name: Oregon Scientific Helmet Video Camera - ATC-2000; brand: Oregon Scientific; price: $81.74\n2. name: VholdR Wearable Camcorder (Black) - 1102; brand: VholdR\n3. name: Lowepro Edit 100 Case for Camcorder - Nylon, MicroFiber - Black (Black); brand: Lowepro\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 384,
+  "output_tokens": 25
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Logitech diNovo Edge Keyboard Mac Edition - 920000924; brand: logitech; description: Logitech diNovo Edge Keyboard Mac Edition - 920000924/ PerfectStroke Key System/ Innovative TouchDisc/ Charging Base/ Optimized Mac Layout/ Bluetooth Wireless Technology/ 38 mm Circular Touch Pad With Horizontal And Vertical Scrolling; price: $159.00\n\nCandidates:\n1. name: Logitech diNovo Edge Keyboard - 967685-0403; brand: Logitech; description: USB\n2. name: Logitech diNovo Media Desktop Laser - 967562-0403; brand: Logitech; description: Keyboard - Wireless - Mouse - Laser - Type A - USB - Receiver\n3. name: Logitech Cordless Desktop MX 5500 Revolution Keyboard and Mouse - 920-000383; brand: Logitech; description: Logitech Cordless Desktop MX 5500 Revolution\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 408,
+  "output_tokens": 30
+ }
+}

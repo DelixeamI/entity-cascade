@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: D-Link Wireless N USB Adapter - DWA130; brand: d link; description: D-Link Wireless N USB Adapter - DWA130/ Complies With Draft 802.11n Standards And Is Backward Compatible With 802.11b/g/ Up To 300 Mbps Data Transfer Rates, Delivers Up To 12x The Speed And 4x The Range Of Wireless-G/ LED Lights Include Link And Activity/ WEP (Wired Equivalent Privacy), WPA And WPA2...\n\nCandidates:\n1. name: Linksys WPSM54G Wireless-G USB Print Server; brand: LINKSYS; description: 1 x 10/100Base-TX Network, 1 x USB - Wi-Fi - IEEE 802.11b/g\n2. name: Linksys WUSB600N Dual-Band Wireless-NUSB Network Adapter - WUSB600N; brand: LINKSYS; description: Linksys Dual-Band Wireless-N USB Network Adapter\n3. name: D-Link Express EtherNetwork High-Speed DOCSIS 2.0 Cable Modem - DCM-202; brand: D-Link; description: D-Link Broadband Cable Modem\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the D-Link DWA130.\"}",
+  "input_tokens": 449,
+  "output_tokens": 39
+ }
+}

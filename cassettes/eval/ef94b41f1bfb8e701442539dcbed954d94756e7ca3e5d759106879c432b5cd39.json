@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG WM3431HS All-In-One Front Load Titanium Washer And Dryer Combo - WM3431TT; description: LG WM3431HS All-In-One Front Load Titanium Washer And Dryer Combo - WM3431TT/ 2.44 Cu. Ft. Capacity/ NeveRust Stainless Steel Drum/ 1400 RPM Maximum Spin Speed/ Ventless Condensing Drying System/ 9 Wash Programs/ 5 Rinse Temperatures/ LoDecibel Quiet Operation/ Upfront Electronic Controls With Dial-...\n\nCandidates:\n1. name: LG Electronics 24' Front-Load All-In-One Washer and Dryer: Titanium; brand: LG Electronics\n2. name: LG 27' Front-Load Electric Dryer with 7.3 cu. ft. Capacity; brand: LG Electronics\n3. name: LG Electronics 24' Washer/Dryer Combo: White; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number WM3431TT.\"}",
+  "input_tokens": 379,
+  "output_tokens": 33
+ }
+}

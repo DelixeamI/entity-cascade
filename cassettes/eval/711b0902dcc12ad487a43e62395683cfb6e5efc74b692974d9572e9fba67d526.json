@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Nikon 18-200mm Nikkor Zoom Lens - Black Finish - 2159; brand: nikon; description: Nikon 18-200mm Nikkor Zoom Lens Accessory - 2159/ Compact 11x Zoom/ 18 - 200MM Focal Range/ Two ED Glass Elements/ Silent Wave Motor/ Three Aspherical Lens Elements/ VR II System\n\nCandidates:\n1. name: Nikon 18-200mm 3.5-5.6 G ED DX AFS VR Zoom Wide Angle Nikkor Lens - Niko_215930348; brand: Nikon; price: $629.00\n2. name: Nikon 55-200mm f/4-5.6G ED IF AF-S DX VR Zoom Telephoto Nikkor Lens - Niko_216687518; brand: Nikon; price: $189.95\n3. name: Nikon Nikkor 70-300mm f/4.5-5.6G ED-IF AF-S VR Telephoto Zoom Lens - 2161; brand: Nikon; description: f/4.5 to 5.6; price: $449.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact model number and specifications.\"}",
+  "input_tokens": 462,
+  "output_tokens": 30
+ }
+}

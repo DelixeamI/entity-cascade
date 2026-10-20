@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Klipsch 5.25' THX Ultra2 In-Ceiling White Loudspeaker - KS7502THX; brand: klipsch; description: Klipsch 5.25' THX Ultra2 In-Ceiling White Loudspeaker - KS7502THX/ 100W Continuous/400W Peak Power Handling/ Dual 1' Titanium Diaphragm Compression Drivers Mated To WDST Tractrix Horn Array/ Dual 5.25' High-Output Cerametallic Cone Woofers/ MDF And Aluminum Motorboard/ABS Shell Enclosure/ White Fini...; price: $1,000.00\n\nCandidates:\n1. name: Klipsch KS7502THX (Each) - KS-7502-THX; brand: Klipsch; price: $1,000.00\n2. name: Klipsch RoomGroove Wireless iPod Speaker System - 1006602; brand: Klipsch; description: Black; price: $199.99\n3. name: polkaudio TCi Series TC60i In-Ceiling Loudspeaker - TC60iW; brand: Polk Audio; description: 2-way Speaker 125W (RMS) - White; price: $132.83\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number KS7502THX\"}",
+  "input_tokens": 481,
+  "output_tokens": 32
+ }
+}

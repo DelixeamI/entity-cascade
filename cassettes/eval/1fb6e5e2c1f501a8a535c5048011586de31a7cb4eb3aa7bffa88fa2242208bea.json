@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: iRobot Robotic Floor Washer - 74249; description: iRobot Robotic Floor Washer - 74249/ Autonomous Robot That Washes And Scrubs Tile, Linoleum, Or Sealed Hardwood Floors Without Human Intervention/ Rotary Scrubber/ Compact Design/ AWARE Sensor Technology/ Virtual Wall Included; price: $299.00\n\nCandidates:\n1. name: iRobot Roomba Scooba Robot Floor Washer; brand: ROBOT\n2. name: Frigidaire 27'' Electric Stack Washer Dryer Combo - FEX831WH Extra-Large Capacity Wash Tub; brand: Frigidaire; price: $895.39\n3. name: LG Electronics WM2016CW 27' Front-Load Washer with 3.5 cu. ft. Capacity, 5 Wash Programs, 5 Temperature Levels, 1050 RPM Maximum and SenseClean System; brand: LG Electronics; price: $699.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 396,
+  "output_tokens": 30
+ }
+}

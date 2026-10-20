@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Plantronics Voyager 510 Bluetooth Headset - Silver Finish - 496915; brand: plantronics; description: Plantronics Voyager 510 Bluetooth Headset - 496915/ Lightweight Design For All-Day Wearing Comfort/ Noise-Canceling Microphone For Clearer Conversations/ Wind-Noise Reduction Technology/ Headset Folds For Easy Storage/ One-Touch Call Control Buttons\n\nCandidates:\n1. name: Plantronics Voyager 510 Bluetooth Headset; brand: Plantronics\n2. name: Plantronics Voyager 510 Bluetooth Earset; brand: Plantronics Bluetooth; description: Plantronics Voyager510 Bluetooth Headset\n3. name: Plantronics .Audio 920 Wireless Earset - 78592-01; brand: Plantronics; description: PLANTRONICS 920 .AUDIO DIGITAL USB PC HEADSET\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 383,
+  "output_tokens": 25
+ }
+}

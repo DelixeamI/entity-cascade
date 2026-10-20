@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony PlayStation 2 8MB Memory Card (2 Pack) - Red/Blue Finish - 711719706700; brand: sony; description: Sony PlayStation 2 8MB Memory Card (2 Pack) - 711719706700/ Save And Load High Scores, Positions And Replays/ MagicGate Encryption/ Red/Blue Finish; price: $34.99\n\nCandidates:\n1. name: SONY 7-11719-70670-0 PS2 8 MB Memory Card 2-pk - 97067; brand: Sony\n2. name: PlayStation 2 Memory Card 8MB; brand: Sony Computer Electronic\n3. name: Sony 2GB Memory Stick PRO Duo Card - MSMT2G; brand: Sony; description: 2 GB; price: $15.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 379,
+  "output_tokens": 25
+ }
+}

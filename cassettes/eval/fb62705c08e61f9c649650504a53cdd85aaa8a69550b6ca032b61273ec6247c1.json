@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Black Cyber-Shot W Series Digital Camera Carrying Case - LCSCSL; brand: sony; description: Sony LCS-CSL Black Cyber-Shot W And S Series Digital Camera Carrying Case - LCSCSL/ Designed Exclusively For Your Cyber-Shot W And S Series Digital Camera/ Form-Fitting Design/ Leather Material/ Black Finish\n\nCandidates:\n1. name: Sony LCS-TWA/B Cyber-shot Camera Case - LCSTWA/B; brand: Sony; description: Top Loading - Leather - Black; price: $34.00\n2. name: Sony LCS-CSQ Soft Cyber-shot Camera Case - LCSCSQ/B; brand: Sony; description: Top Loading - Polyamide - Black\n3. name: Sony LCS-CSL Cyber-shot Camera Case; brand: Sony; description: Top Loading - Leather - Black\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The model number and description do not match any candidate exactly.\"}",
+  "input_tokens": 353,
+  "output_tokens": 32
+ }
+}

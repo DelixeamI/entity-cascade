@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Hands Free Headset  - KXTCA92; brand: panasonic; description: Panasonic Hands Free Headset - KXTCA92/ Comfort Fit With Fold Design/ Noise Cancelling Microphone/ Volume Control/ Mute/ Standard 2.5mm Connection; price: $25.00\n\nCandidates:\n1. name: Panasonic KX-TGA670B Cordless Handset; brand: Panasonic; description: Panasonic KX-TGA670B Additional Handset for PANKXTG6700B\n2. name: Panasonic KX-TGA450B Cordless Handset; brand: Panasonic; description: Panasonic KX-TGA450B Additional Handset for PANKXTG4500B\n3. name: Panasonic KX-TGA820B Cordless Handset; brand: Panasonic; description: Black; price: $39.76\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number Panasonic KXTCA92\"}",
+  "input_tokens": 376,
+  "output_tokens": 34
+ }
+}

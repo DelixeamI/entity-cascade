@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon XH A1S Black High Definition HDV Camcorder - XHA1S; brand: canon; description: Canon XH A1S Black High Definition HDV Camcorder - XHA1S/ 20x HD L Series Zoom/ 0.57' Widescreen Viewfinder/ 2.8' Widescreen LCD Screen/ High-Performance Stereo Electric Condenser Microphone/ SuperRange Optical Image Stabilization/ DIGIC DV II HD Image Processor/ 1440 x 1080 Pixels/ Instant Auto Foc...\n\nCandidates:\n1. name: Canon XH A1S - 3238B001; brand: Canon; price: $3,999.00\n2. name: Canon VIXIA HV30 High Definition Digital Camcorder - 2680B001; brand: Canon; price: $650.99\n3. name: Canon VIXIA HG21 High Definition Camcorder - 2704B001AA; brand: Canon; price: $798.97\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number XHA1S\"}",
+  "input_tokens": 423,
+  "output_tokens": 29
+ }
+}

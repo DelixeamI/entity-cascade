@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon Printer Black Ink Cartridge - CLI221BLK; brand: canon; description: Canon Printer Black Ink Cartridge - CLI221BLK/ FINE Technology For Exceptional Sharpness And Detail/ Compatible With PIXMA iP3600, PIXMA iP4600, PIXMA MP620 And PIXMA MP980\n\nCandidates:\n1. name: Canon PIXMA iP4600 Inkjet Color Photo Printer - 2909B002; brand: Canon\n2. name: Canon PIXMA MP620 Wireless Photo All-In-One Inkjet Printer - 2921B002; brand: Canon\n3. name: Canon PIXMA MP980 Wireless All-in-One Color Photo Inkjet Printer - 2922B002; brand: Canon\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Candidates are printers, not ink cartridges\"}",
+  "input_tokens": 358,
+  "output_tokens": 27
+ }
+}

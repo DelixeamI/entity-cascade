@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic 2GB SD Memory Card - SDV02GU1A; brand: panasonic; description: Panasonic 2GB SD Memory Card - SDV02GU1A/ Class 6 Performance/ Pro High Speed Series/ Up To 20MB Per Second/ Yellow Finish\n\nCandidates:\n1. name: PANASONIC 2GB SD CARD PROHISPD 20 MB/SEC - RP-SDV02GU1A; price: $11.99\n2. name: Panasonic HD 3MOS 60GB Hard Disk Drive/SD Hybrid Camcorder with Advanced Optical Image Stabilizer, Leica Lens, 12x Optical Zoom, 2.7' Wide LCD and Records to Internal Hard Drive and SD Card - HDC-HS100K; brand: Panasonic; price: $911.96\n3. name: Panasonic Palmcorder SDR-H60 Digital Camcorder - SDR-H60S; brand: Panasonic; description: Panasonic SDR-H60 60GB Hard Disk Drive/SD Hybrid Camcorder with 50x Optical Zoom, Advanced Optical Image Stabilization, One-Touch DVD Copy, Anti-Shock Shield and One-Touch Navigation, Records to Internal Hard Drive or SD Card\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 454,
+  "output_tokens": 25
+ }
+}

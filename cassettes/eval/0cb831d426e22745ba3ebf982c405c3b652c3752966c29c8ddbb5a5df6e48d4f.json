@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Haier 15' Black Flat Panel LCD HDTV DVD Combo - HLC15R; brand: haier; description: Haier 15' Black Flat Panel LCD HDTV DVD Combo - HLC15R/ 720p Resolution/ 300:1 Contrast Ratio/ 16ms Response Time/ 3D Digital Comb Filter/ ATSC/NTSC/QAM Tuner/ Video Noise Reduction/ Black Finish\n\nCandidates:\n1. name: 15' LCD HDTV/DVD Combo Black - 15LV505; brand: Toshiba\n2. name: 13in Crt Tv/dvd Combo - TCR13; brand: Haier\n3. name: Toshiba 22LV506 22' TV/DVD Combo; brand: Toshiba; description: 21.9' - LCD - Active Matrix - ATSC, NTSC - 16:9 - 1680 x 1050 - - HDTV - DVD-R, DVD-RW, CD-R, CD-RW - 720p\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the Haier HLC15R.\"}",
+  "input_tokens": 416,
+  "output_tokens": 38
+ }
+}

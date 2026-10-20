@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: TomTom GPS Mount And USB Car Charger - 9S00006; brand: tomtom; description: TomTom GPS Mount And USB Car Charger - 9S00006/ Extra Holder And Car Charger Convenient For Multi-Vehicles User/ No Need To Transfer Holder From One Car To Another/ Easy Installation/ Compatible With TomTom ONE XL/ Black Finish; price: $28.00\n\nCandidates:\n1. name: TOMTOM GPS Receiver Accessory Kit - 9N00.101; brand: Tom Tom; description: TomTom Windshield Mount and USB Car Charger; price: $35.64\n2. name: TOMTOM ONE XL Additional Mount Kit - 9S00.006; brand: Tom Tom; price: $29.95\n3. name: TomTom XL 330 S Portable GPS Sysytem - Text to Speech - 4.3' Touchscreen - 1EG0.052.01; brand: TOMTOM, INC.\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches both brand and model number exactly.\"}",
+  "input_tokens": 405,
+  "output_tokens": 30
+ }
+}

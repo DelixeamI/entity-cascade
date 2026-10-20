@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic 5.8 GHz Black Expandable Digital Cordless Phone System - KXTG4324B; brand: panasonic; description: Panasonic 5.8 GHz Black Expandable Digital Cordless Phone System - KXTG4324B/ 4 Handsets System/ Digital Answering Machine/ Ringer ID/ Call Waiting Caller ID/ Voicemail/ Hold/ Mute/ Clock/ Alarm/ LED Lighting/ Night Mode/ Speakerphone/ Intercom/ 11 Days Standby/ 5 Hours Talk Time/ Black Finish\n\nCandidates:\n1. name: Panasonic KX-TG4323B 5.8 GHz Expandable Digital Cordless Phone; brand: Panasonic; description: 1 x Phone Line(s) - Black\n2. name: Panasonic KX-TG4321B 5.8 GHz Expandable Digital Cordless Phone; brand: Panasonic; description: 1 x Phone Line(s) - Black\n3. name: Panasonic KX-TG6700B Cordless Telephone; brand: Panasonic; description: Panasonic KX-TG6700B 5.8 GHz 2-Line FHSS GigaRange Expandable Digital Cordless Phone with Answering System & Call Waiting Caller ID; price: $106.14\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Model numbers do not match\"}",
+  "input_tokens": 452,
+  "output_tokens": 25
+ }
+}

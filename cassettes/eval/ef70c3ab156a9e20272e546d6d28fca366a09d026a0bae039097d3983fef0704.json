@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Chestnut Hill Sound George iPod Music System In White - CHS4001; brand: chestnut hill; description: Chestnut Hill Sound George iPod Music System In White - CHS4001/ Playback System For The iPod/ Full Feature Wireless Remote/ Charging Stand Kit/ Bandless AM/FM Radio/ Easy Set Alarm/ Detachable Front Panel/ White Finish/ iPod Sold Separately; price: $499.00\n\nCandidates:\n1. name: Chestnut Hill CHS40001 Chestnut Hill George Ipod Dock Compact Stereo System; brand: Chestnut Hill; price: $499.00\n2. name: Klipsch RoomGroove Wireless iPod Speaker System - 1006602; brand: Klipsch; description: Black; price: $199.99\n3. name: Boston Acoustics Horizon Duo-i AM/FM Stereo Radio - HDUOIMDNT; brand: Boston Acoustics; description: 5 x AM, 10 x FM; price: $135.52\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 412,
+  "output_tokens": 30
+ }
+}

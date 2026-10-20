@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Toshiba Rechargeable 5-Hour Battery Pack - MEDB05LX; brand: toshiba; description: Toshiba Rechargeable 5-Hour Battery Pack - MEDB05LX/ Works With SDP2500 And SDP2600 Portable DVD Players; price: $149.99\n\nCandidates:\n1. name: Toshiba 19LV505 - 19' Widescreen LCD HDTV w/ Built-in DVD Player - 800:1 Contrast Ratio - 5ms Response Time; brand: Toshiba\n2. name: Toshiba 19LV506 - 19' Widescreen LCD HDTV w/ Built-in DVD Player - 800:1 Contrast Ratio - 5ms Response Time - White; brand: Toshiba\n3. name: Toshiba D-R410 DVD Player/Recorder; brand: Toshiba; description: Toshiba D-R410 - DVD Recorder w/ 1080p Upconversion\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 394,
+  "output_tokens": 34
+ }
+}

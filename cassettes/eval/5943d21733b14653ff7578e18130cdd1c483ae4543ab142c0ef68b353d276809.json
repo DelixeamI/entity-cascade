@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung 63' Black Flat Panel Series 6 Plasma HDTV - PN63A650; brand: samsung; description: Samsung 63' Black Flat Panel Series 6 Plasma HDTV - PN63A650/ 1920 x 1080 Full HD Resolution/ 1,000,000:1 Dynamic Contrast Ratio/ DNIe Pro/ Picture-In-Picture/ SRS TrusurroundXT/ Ultra FilterBright Anti Glare Filter/ 100,000 Hour Panel Life/ Touch Of Color/ ATSC/NTSC/Clear QAM Built-In Tuner/ Black...\n\nCandidates:\n1. name: Samsung 6 Series HL61A650 61' Projection TV; brand: Samsung; description: Samsung HL61A650 - 61' Widescreen 1080p DLP HDTV w/ Built in NTSC/ATSC Tuner - Piano Black; price: $1,076.94\n2. name: Samsung 6 Series HL56A650 56' Projection TV; brand: Samsung; description: Samsung HL56A650 - 56' Widescreen 1080p DLP HDTV w/ Built in NTSC/ATSC Tuner - Piano Black; price: $1,079.96\n3. name: Samsung PN58A550 58' Plasma TV; brand: Samsung; description: Samsung PN58A550 - 58' Widescreen 1080p Plasma HDTV - 1,000,000:1 Dynamic Contrast Ratio - Piano Black; price: $2,294.90\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 565,
+  "output_tokens": 34
+ }
+}

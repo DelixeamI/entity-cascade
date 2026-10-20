@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Garmin Nuvi 205 GPS Navigation System - 0100071740; brand: garmin; description: Garmin Nuvi 205 GPS Navigation System - 0100071740/ 3.5' Antiglare Display/ Contiguous U.S., Canada Or Regional Sections Of Europe Preloaded Maps/ Voice Prompts/ 3D Map Option/ Auto Re-Route/ Choice Of Route Setup/ FM Traffic Compatible/ MSN Direct For U.S. Compatible/ Touchscreen/ MicroSD Slot/ Up...\n\nCandidates:\n1. name: Garmin nvi 205 Automobile Navigator - 010-00717-40; brand: Garmin; description: Garmin nuvi 205 Automobile Navigator - 3.5' Active Matrix TFT Color LCD\n2. name: Garmin nvi 255W Automobile Navigator - 010-00718-20; brand: Garmin; description: Garmin nuvi 255W 4.3' GPS w/ Text To Speech, Where Am I?; price: $204.99\n3. name: Garmin nuVi 275T - 3.5' GPS w/Text To Speech, Bluetooth, Where Am I?, Connect Photos - 010-00576-00; brand: Garmin; price: $245.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 488,
+  "output_tokens": 25
+ }
+}

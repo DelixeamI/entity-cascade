@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LaCie USB 2.0 Floppy Disk Drive - 706018; brand: lacie; description: LaCie USB 2.0 Floppy Disk Drive - 706018/ Ultra-Thin Portable Design/ Compatible With Windows And Mac OS/ Plug And Play/ USB Powered/ 250 - 500 kbps Transfer Rate/ Silver Finish; price: $49.00\n\nCandidates:\n1. name: LaCie Little Disk Hard Drive - 301278; brand: LACIE; description: LaCie Little Disk 250GB USB 2.0 5400RPM Portable External Hard Drive; price: $79.99\n2. name: LaCie USB 2.0 External Hard Drive - 301304U; brand: LACIE; description: LaCie 1TB USB 2.0 7200RPM Desktop External Hard Drive - Design by Neil Poulton\n3. name: LaCie USB 2.0 External Hard Drive - 301302U; brand: LACIE; description: LaCie 500GB USB 2.0 7200RPM Desktop External Hard Drive - Design by Neil Poulton; price: $86.95\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 476,
+  "output_tokens": 34
+ }
+}

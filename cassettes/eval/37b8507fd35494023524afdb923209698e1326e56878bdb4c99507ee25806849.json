@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Linksys Black Media Center Extender - DMA2100; brand: linksys; description: Linksys Black Media Center Extender - DMA2100/ Works With Your Windows Vista Media Center PC/ Dual Band 802.11N Wireless/ Learning Remote Included; price: $119.00\n\nCandidates:\n1. name: Linksys WAP4400N Wireless-N Access Point With POE - WAP4400N; brand: LINKSYS; description: Linksys Wireless-N Access Point with Power Over Ethernet High-Speed Wireless Access for Existing Networks!\n2. name: Logitech Harmony RF Extender - 915-000044; brand: Logitech\n3. name: Linksys Wireless-G Range Expander Wireless Bridge - WRE54G; brand: LINKSYS; description: 54Mbps\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number DMA2100.\"}",
+  "input_tokens": 364,
+  "output_tokens": 34
+ }
+}

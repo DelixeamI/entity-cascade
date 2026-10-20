@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Yamaha YAS-71 Black Front Surround System - YAS71BK; brand: yamaha; description: Yamaha YAS-71 Black Front Surround System - YAS71BK/ 210 Watts Total Power/ Dolby Digital, DTS And Dolby Pro Logic II Compatibility/ CINEMA DSP Digital/ Magnetic Shielding/ Digital Amplifier/ Air Surround Xtreme/ 4 Surround Programs/ Compressed Music Enhancer/ Night Listening Mode/ Black Finish\n\nCandidates:\n1. name: Yamaha YHT-390BL Home Theater System - YHT-390bl; brand: Yamaha; description: , 5.1 Speakers - Progressive Scan - 600W RMS - Black; price: $319.96\n2. name: Yamaha YSTFSW100 Subwoofer - YST-FSW100BL; brand: Yamaha; description: Yamaha YST-FSW100 6.5' 130-Watt Powered Sub-woofer- Black\n3. name: Yamaha RX-V663 Home Theater Receiver - RXV663BL; brand: Yamaha; description: 665W - Dolby TrueHD, Dolby Digital EX, Dolby Pro Logic IIx, Dolby Digital Plus, DTS-HD, DTS-ES, DTS 96/24, DTS Neo:6, Neural SurroundXM; price: $499.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number Yamaha YAS-71BK\"}",
+  "input_tokens": 491,
+  "output_tokens": 35
+ }
+}

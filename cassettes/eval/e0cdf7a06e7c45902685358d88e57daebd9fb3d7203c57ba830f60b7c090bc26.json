@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Garmin 010-10723-03 Nuvi Suction Cup Mount - 0101072303; brand: garmin; description: Garmin 010-10723-03 Nuvi Suction Cup Mount - 0101072303/ Replacement Suction Cup Mount/ Compatible With Garmin Nuvi 300/310/350/360 GPS System/ Black Finish; price: $39.00\n\nCandidates:\n1. name: Garmin Suction Cup Mount - 010-10823-00; brand: Garmin; price: $24.84\n2. name: Garmin Suction Cup Mount - 010-10815-00; brand: Garmin; price: $17.40\n3. name: Garmin Adjustable Vehicle Suction Cup - 010-10823-03; brand: Garmin; price: $7.22\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates have the same model number as the price-list item.\"}",
+  "input_tokens": 406,
+  "output_tokens": 35
+ }
+}

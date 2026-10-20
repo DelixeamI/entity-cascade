@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Kenwood KCA-IP200 Black iPod Direct Cable - KCAIP200; brand: kenwood; description: Kenwood KCA-IP200 Black iPod Direct Cable - KCAIP200/ 2-Wire Cable For High Speed Control Of iPod With Compatible 2007 Kenwood Receivers/ Black Finish\n\nCandidates:\n1. name: Kenwood KCA-IP500 iPod Interface/Controller - KCAIP500; brand: Kenwood; price: $47.72\n2. name: Kenwood iPod-Video Direct Adapter - KCAiP300V; brand: Kenwood; description: Proprietary Male to Type A Male USB, 2 x Mini-phone Male - 4.92ft; price: $26.00\n3. name: Klipsch RoomGroove Wireless iPod Speaker System - 1006602; brand: Klipsch; description: Black; price: $199.99\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 399,
+  "output_tokens": 30
+ }
+}

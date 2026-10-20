@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Pioneer Black Premier Single CD Receiver - DEHP700BT; brand: pioneer; description: Pioneer Black Premier Single CD Receiver - DEHP700BT/ Built-In Bluetooth Solution/ USB Direct Control For iPod/ Advanced Sound Retriever/ 3 RCA Hi-Volt Preouts/ Two-Way Crossover/ Built-In MOSFET 50 W x 4 Amplifier/ Supertuner IIID/ Amplifier Off Mode/ Display Off Mode; price: $308.00\n\nCandidates:\n1. name: Pioneer DEHP500UB Car Audio Player; brand: Pioneer; description: CD-RW - CD-Text, MP3, WMA, WAV, AAC - 4 - 200W - FM, AM; price: $153.64\n2. name: Pioneer DEHP400UB Car Audio Player; brand: Pioneer; description: CD-RW - CD-Text, MP3, WMA, WAV, AAC - 4 - 200W - FM, AM; price: $134.32\n3. name: Pioneer DEH-P3000IB Car Audio Player; brand: Pioneer; description: CD-RW - CD-Text, MP3, WMA, WAV, AAC - 4 - 200W - FM, AM; price: $92.72\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate has the same model number as the price-list item.\"}",
+  "input_tokens": 473,
+  "output_tokens": 33
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Weber Stainless Steel Summit S-650 Liquid Propane Grill - 1780001; brand: weber; description: Weber Stainless Steel Summit S-650 Liquid Propane Grill - 1780001/ 6 Stainless Steel Burners/ 60,000 BTU-Per-Hour Input/ 12,000 BTU-Per-Hour Input Side Burner/ 10,600 BTU-Per-Hour Rotisserie Burner/ 8,000 BTU-Per-Hour Input Smoker Burner/ Snap-Jet Individual Burner Ignition System/ 3/8-Inch Diameter...; price: $1,999.00\n\nCandidates:\n1. name: Weber Summit Series S-450 74 1/10' Freestanding Gas Grill with 838 sq. in. Cooking Surface, 6 Stainless Steel Burners, Rotisserie Burner, Stainless Steel Smoker Box & Stainless Steel Work Surface: LP Gas; brand: Weber\n2. name: Weber Genesis Series 3770001 60' Freestanding Gas Grill; brand: Weber\n3. name: Genesis Series 3741001 60' Freestanding Gas Grill with 637 sq. in. Cooking Surface & 3 Stainless Steel Burners: Black LP Gas; brand: Weber; price: $636.61\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 499,
+  "output_tokens": 30
+ }
+}

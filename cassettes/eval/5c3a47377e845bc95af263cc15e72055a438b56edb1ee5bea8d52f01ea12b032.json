@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Hoover Bagged Tempo Widepath Upright Vacuum - U5140; brand: hoover; description: Hoover U5140-900 Bagged Tempo Widepath Upright Vacuum - U5140/ Filter Traps 100 Percent Dust Mites, 99.98 Percent Ragweed And Common Grass Pollens/ Powerful 12 Amp Motor/ Filter Bag Check For Optimum Cleaner Performance/ 15' Cleaner Width\n\nCandidates:\n1. name: Hoover Company #U5140900 Wide Path Bag Up Vac; brand: HOOVER COMPANY\n2. name: Hoover EmPower U5269-900 Vacuum (Upright, HEPA, Bagless); brand: Hoover\n3. name: Lowepro Edit 100 Case for Camcorder - Nylon, MicroFiber - Black (Black); brand: Lowepro\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 374,
+  "output_tokens": 25
+ }
+}

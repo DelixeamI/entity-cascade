@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Alpine 2-DIN DVD/CD/MP3/WMA Receiver/AV Head Unit - IVAW205; brand: alpine; description: Alpine 2-DIN DVD/CD/MP3/WMA Receiver/AV Head Unit - IVAW205/ 6.5' Touchscreen Display/ 22 Watts RMS/50 Peak x 4 Channels/ Plays MP3/WMA/AACs On CD And DVD/ 24-Bit DAC Converter/ Steering Wheel Remote Control Ready/ Bluetooth, Satellite Radio And HD Radio Ready/ Full Speed Connection For iPod\n\nCandidates:\n1. name: ALPINE CDA-9886 Car Audio Player - CDA9886; brand: Alpine; description: CD-R, CD-RW - CD-DA, MP3, WMA, AAC - 4 - 200W - FM, AM\n2. name: ALPINE CDA-9887 Car Audio Player - CDA9887; brand: Alpine; description: CD-R, CD-RW - CD-DA, MP3, WMA, AAC - 4 - 200W - FM, AM; price: $295.00\n3. name: ALPINE MRP-F300 Car Amplifier; brand: Alpine; description: 4 Channel(s) - Class AB - 100dB SNR\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 480,
+  "output_tokens": 34
+ }
+}

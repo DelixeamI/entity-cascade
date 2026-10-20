@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Mitsubishi 835 Diamond Series 65' 1080p DLP Rear Projection HDTV - WD65835; brand: mitsubishi; description: Mitsubishi 835 Diamond Series 65' 1080p DLP Rear Projection HDTV - WD65835/ 1920 x 1080 Full HD Resolution/ 6-Color Processor/ Smooth 120Hz/ x.v.Color/ Plush1080p 12-Bit Digital Video Processing/ Color 4D Video Noise Reduction/ 3D Ready/ NetCommand/ DeepField Imager/ Black Finish\n\nCandidates:\n1. name: Mitsubishi WD-65735 65' Projection TV - WD65735; brand: Mitsubishi; description: 65' - DLP - 16:9 - 1920 x 1080 - Dolby; price: $1,401.26\n2. name: Mitsubishi WD-65736 65' Projection TV - WD65736; brand: Mitsubishi; description: 65' - DLP - HDTV Ready; price: $1,309.56\n3. name: Mitsubishi Diamond WD-73835 73' Projection TV - WD73835; brand: Mitsubishi; description: 73' - DLP; price: $3,299.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number WD65835\"}",
+  "input_tokens": 504,
+  "output_tokens": 32
+ }
+}

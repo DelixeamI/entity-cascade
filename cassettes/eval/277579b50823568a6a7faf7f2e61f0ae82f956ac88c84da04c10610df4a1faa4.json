@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: iHome iPod & iPhone Bluetooth Alarm Clock Radio System - IP47; brand: ihome; description: iHome iPod & iPhone Bluetooth Alarm Clock Radio System - IP47/ Play And Charge Your iPod Or iPhone/ Wirelessly Stream Music From Bluetooth Devices/ Auto-Set Clock/ Speakerphone With Built-In Microphone/ 4 Speaker Stereo/ Dual Alarm/ 12 AM/FM Station Memory Presets/ Full-Function Remote Included/ Com...\n\nCandidates:\n1. name: iHome IP47BR Bluetooth Clock Radio & Speakerphone for iPhone & iPod - iP47BR; brand: iHome\n2. name: IH9B6R BLACK ALARM CLOCK F/IPODPERPCHARGES DOCKED IPOD REMOTE CONTROL; brand: SDI TECHNOLOGIES - IHOME\n3. name: iHome iH70SRC 15 Watt Computer Speakers with iPod Syncing/Charging Dock - IH70SRC; brand: iHome\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number IP47\"}",
+  "input_tokens": 382,
+  "output_tokens": 28
+ }
+}

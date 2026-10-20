@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Expandable Digital Cordless DECT 6.0 Phone System - KXTG1032S; brand: panasonic; description: Panasonic Expandable Digital Cordless DECT 6.0 Phone System - KXTG1032S/ Up To 17 Hours Of Talk Time/ Expandable Up To 6 Handsets/ Up To 3-Way Conference Capability/ Light-Up Indicator With Ringer/Message Alert/ Backlit LCD On Handset/ Digital Speakerphone/ 16-Minute All-Digital Answering System/ Si...; price: $69.00\n\nCandidates:\n1. name: Panasonic KX-TG9343T Cordless Phone; brand: Panasonic; description: Panasonic KX-TG9343T DECT 6.0 Expandable Digital Cordless Answering System w/3 Handsets; price: $102.12\n2. name: Panasonic KX-TG9332S DECT 6.0 Expandable Digital Cordless Phone; brand: Panasonic; description: 1 x Phone Line(s) - Silver\n3. name: Panasonic KX-TG9333T Cordless Phone - KX-TG9333T; brand: Panasonic; description: Panasonic DECT 6.0 1.9GHz Expandable Cordless Phone with Digital Answering System\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The model number KXTG1032S does not match any candidate.\"}",
+  "input_tokens": 473,
+  "output_tokens": 37
+ }
+}

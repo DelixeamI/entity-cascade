@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG 42' Glossy Piano Black LCD Flat Panel HDTV - 42LG30; description: LG 42' Glossy Piano Black LCD Flat Panel HDTV- 42LG30/ 720p HD Resolution/ 1366 x 768 Resolution/ 12,000:1 Dynamic Contrast Ratio/ AV Mode (Cinema, Sports, Game)/ Clear Voice/ LG SimpLink Connectivity/ Invisible Speaker System/ 6.2ms Response Time/ 60,000 Hours Life Span/ ATSC/NTSC/Clear QAM Built-I...\n\nCandidates:\n1. name: Toshiba 42RV535U - 42' Widescreen 1080p LCD HDTV w/ Cinespeed - Piano Black; brand: Toshiba; price: $789.98\n2. name: Samsung PN42A450 - 42' Widescreen 720p Plasma HDTV - 100,000:1 Dynamic Contrast Ratio - Piano Black - PN42A450P; brand: Samsung; price: $899.99\n3. name: LG 42PG20 - 42' Widescreen 720p Plasma HDTV - 20,000:1 Dynamic Contrast Ratio; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 481,
+  "output_tokens": 34
+ }
+}

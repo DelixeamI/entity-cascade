@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nHow to decide:\n1. Find the model number (letters and digits, e.g. PSLX350H or MDR-J10) in the price-list item.\n2. A candidate with the same model number is the same product, ignoring case, dashes and spaces,\n   and ignoring a colour or variant suffix such as /BLUE or BK/WH on an otherwise identical base\n   model. Different wording, descriptions or prices do not matter.\n3. If no candidate shares the model number, pick one only when brand and product type are the\n   same and the names share distinctive words. Otherwise answer \"none\".\n4. Never answer \"none\" only because the wording or the price differs.\nConfidence: 0.9 or more when the model number matches; 0.6 to 0.8 when brand and product type\nmatch but no model number can be compared; below 0.5 when you are unsure.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sanus Black Single-Column AV Component System - VF2012; brand: sanus; description: Sanus Black Single-Column AV Component System - VF2012/ 50 lbs Top/Bottom Shelf Capacity/ Adjustable Shelves/ Easy To Assemble/ Wire Management System/ Open Architecture/ Black Finish\n\nCandidates:\n1. name: Sanus Euro Foundation Series III Speaker Stand - EFSATBKIII; brand: Sanus; description: Steel - Black\n2. name: Sanus VCD/DVD Wall Mount - VMAVB; brand: Sanus\n3. name: Sanus Television Turntable - TV/LCDS; brand: Sanus; description: 150 lb\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.2, \"reason\": \"No matching model number and insufficient similarity in brand and product type\"}",
+  "input_tokens": 453,
+  "output_tokens": 32
+ }
+}

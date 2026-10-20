@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Toshiba 10.2' Portable DVD Player In Black - SDP101S; brand: toshiba; description: Toshiba 10.2' Portable DVD Player In Black - SDP101S/ LCD Display With 800x480 Pixel Resolution/ Swivel And Flip Screen/ Up To 5 Hour Lithium Ion Battery/ DivX Certified/ 4-In-1 Card Slot/ MP3 And WMA Formats/ JPEG Viewer/ Car Cord Adapter/ Dual Headphone Outputs/ Virtual Surround Built-In Speakers\n\nCandidates:\n1. name: Toshiba SD-P71S Portable DVD Player; brand: Toshiba; description: Toshiba SD-P71S - 7' Portable DVD Player; price: $119.36\n2. name: Case Logic 10' In-Car DVD Player Case - 11' x 9.25' x 4' - Nylon, Koskin - Black (Black); brand: Case Logic; price: $18.98\n3. name: Toshiba SD-6100 DVD Player; brand: Toshiba; description: Toshiba SD-6100 - DVD Player w/ 1080p Upconversion\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number SDP101S.\"}",
+  "input_tokens": 436,
+  "output_tokens": 35
+ }
+}

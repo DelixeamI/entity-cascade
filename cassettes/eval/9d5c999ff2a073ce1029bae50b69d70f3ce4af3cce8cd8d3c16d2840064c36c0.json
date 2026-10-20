@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Apple iPod Nano Gray Armband - MB769GA; brand: apple; description: Apple iPod Nano Gray Armband - MB769GA/ Compatible With 4th Generation iPod Nano/ Has Space For The Nike + iPod Sport Kit Receiver/ Gray Finish; price: $29.00\n\nCandidates:\n1. name: Apple 8GB iPod nano Green (4th Generation) - MB745LL/A; brand: Apple; price: $139.88\n2. name: Apple 8GB iPod nano Blue (4th Generation) - MB732LL/A; brand: Apple; price: $146.75\n3. name: Apple 8GB iPod nano Black (4th Generation) - MB754LL/A; brand: Apple; price: $146.75\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The price-list item is an armband accessory, not an iPod nano model.\"}",
+  "input_tokens": 360,
+  "output_tokens": 37
+ }
+}

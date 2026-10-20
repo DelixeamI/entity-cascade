@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG 24' LDF6920WW Fully Integrated Built In White Dishwasher - LDF6920WH; description: LG 24' LDF6920WW Fully Integrated Built In White Dishwasher - LDF6920WH/ XL Tall Tub Cleans Up To 16 Place Settings At Once/ Adjustable Upper Rack/ LoDecibel Quiet Operation/ SenseClean Wash System/ 5 Wash Cycles With 3 Spray Arms/ Multi-Level Water Direction/ Slim Direct Drive Motor/ Fully Integrat...\n\nCandidates:\n1. name: LG Electronics 24' Washer/Dryer Combo: White; brand: LG Electronics\n2. name: LG LDF6920ST Fully Integrated Dishwasher with 5 Wash Cycles, 3 Spray Arms, SenseClean System, Delay Start, Food Disposer and Self-Clean Filter: Stainless Steel; brand: LG Electronics\n3. name: LG Electronics 24' Front-Load All-In-One Washer and Dryer: Titanium; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 395,
+  "output_tokens": 30
+ }
+}

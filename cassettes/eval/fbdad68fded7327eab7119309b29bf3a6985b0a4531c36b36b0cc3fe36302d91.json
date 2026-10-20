@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: BlueAnt Black Bluetooth Headset - Z9I; brand: blueant; description: BlueAnt Black Bluetooth Headset - Z9I/ Pairs With 5 Devices/ Bluetooth Version 2.0 Technology/ Dual Microphones For Pure Speech/ Revolutionary Voice Isolation Technology/ Automatic Connection And Reconnection With Notification/ Firmware Upgrade Via USB On Your PC/ Up To 5.5 Hours Talk Time/ 200 Hour...; price: $99.00\n\nCandidates:\n1. name: BlueAnt Supertooth Light Compact Bluetooth Speakerphone -- Black - 093744; brand: BlueAnt\n2. name: BLUEANT BLUETOOTH HS DUAL MIC NIC - 091004; brand: BlueAnt; price: $99.99\n3. name: Jabra BT2070 Bluetooth Headset - 100-92070000-02; brand: Jabra\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 384,
+  "output_tokens": 30
+ }
+}

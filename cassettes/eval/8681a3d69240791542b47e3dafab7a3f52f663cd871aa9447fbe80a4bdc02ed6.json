@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Transcend 133X High-Speed 4GB Compact Flash Card - TS4GCF133; description: Transcend 133X High-Speed 4GB Compact Flash Card - TS4GCF133/ 21.5MB Per Sec. Data Transfer Rate/ Dual-Channel Support/ Multi-Platform Compatibility/ Supports Ultra DMA Mode 0-4/ Low Power Consumption\n\nCandidates:\n1. name: Transcend 8GB Compact Flash Card (133x) - TS8GCF133; brand: TRANSCEND INFORMATION; description: Transcend 8GB CompactFlash Card (133x)\n2. name: Transcend 2GB CompactFlash Card (133x) - TS2GCF133; brand: TRANSCEND INFORMATION\n3. name: Transcend 4GB Secure Digital High Capacity (SDHC) Card - Class 6 - TS4GSDHC6; brand: TRANSCEND INFORMATION; description: Transcend 4GB SDHC Class 6 Secure Digital High Capacity Card; price: $5.74\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact brand and model number TS4GCF133.\"}",
+  "input_tokens": 420,
+  "output_tokens": 37
+ }
+}

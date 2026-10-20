@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: TomTom ONE XL 330 Car GPS Navigation System - 1EG005200; brand: tomtom; description: TomTom ONE XL 330 Car GPS Navigation System - 1EG005200/ 4.3' LCD Anti-Glare Touch Screen/ Pre-Installed Maps/ Internal Lithium-Ion Battery/ Car Speed Linked Volume/ Automatic Day/Night Mode/ QuickGPSfix; price: $246.95\n\nCandidates:\n1. name: TomTom XL 330 S Portable GPS Sysytem - Text to Speech - 4.3' Touchscreen - 1EG0.052.01; brand: TOMTOM, INC.\n2. name: TomTom XL 330 Portable GPS System w/ Preloaded Maps - 1EG0.052.00; brand: Tom Tom\n3. name: TomTom ONE 130 S Portable GPS System w/ Preloaded Maps - 1EE0.052.02; brand: Tom Tom\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates match the exact brand and model number.\"}",
+  "input_tokens": 409,
+  "output_tokens": 32
+ }
+}

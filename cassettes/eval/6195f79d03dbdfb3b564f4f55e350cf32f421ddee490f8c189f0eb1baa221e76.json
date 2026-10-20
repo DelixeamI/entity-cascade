@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG Titanium Bottom-Freezer Refrigerator - LRBP1031TT; description: LG 10 Cu. Ft.Titanium Bottom-Freezer Refrigerator - LRBP1031TT/ 2 Tempered Glass Shelves/ 3 See-Thru Freezer Drawers With Ice Trays/ 2 Vegetable Crispers/ Electronic Temperature Controls/ Multi-Air Flow Cooling/ Quick Freezing Drawer/ Door Open Alarm/ Energy Saving Vacation Mode\n\nCandidates:\n1. name: LG 24.7 cu. ft. Stainless Steel French Door Bottom Mount Refrigerator; brand: LG Electronics\n2. name: LG Electronics LRBP1031W 10 Cu. Ft. Refrigerator; brand: LG Electronics\n3. name: LG 25 CF Refrigerator 3 Door White Tall; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number LRBP1031TT exactly.\"}",
+  "input_tokens": 352,
+  "output_tokens": 35
+ }
+}

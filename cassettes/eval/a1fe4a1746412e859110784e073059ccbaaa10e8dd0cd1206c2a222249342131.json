@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sanus Black Single-Column AV Component System - VF2012; brand: sanus; description: Sanus Black Single-Column AV Component System - VF2012/ 50 lbs Top/Bottom Shelf Capacity/ Adjustable Shelves/ Easy To Assemble/ Wire Management System/ Open Architecture/ Black Finish\n\nCandidates:\n1. name: Sanus Euro Foundation Series III Speaker Stand - EFSATBKIII; brand: Sanus; description: Steel - Black\n2. name: Sanus VCD/DVD Wall Mount - VMAVB; brand: Sanus\n3. name: Sanus Television Turntable - TV/LCDS; brand: Sanus; description: 150 lb\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number VF2012.\"}",
+  "input_tokens": 328,
+  "output_tokens": 34
+ }
+}

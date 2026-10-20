@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Case Logic Black In-Car DVD Player Case - PDVK10; brand: case logic; description: Case Logic Black In-Car DVD Player Case - PDVK10/ Holds Up To 10' Portable DVD And Portable iPod Players/ Grab & Go Suspension System/ Built-In Dual Jack Headphone System/ Extra Storage Compartment/ Black Finish; price: $29.00\n\nCandidates:\n1. name: Case Logic 10' In-Car DVD Player Case - 11' x 9.25' x 4' - Nylon, Koskin - Black (Black); brand: Case Logic; price: $18.98\n2. name: Case Logic Universal Vertical PDA Leather Pouch - CLP104BB; brand: Case Logic; description: Leather; price: $9.99\n3. name: Sony BRAVIA DAV-HDX279WC Home Theater System; brand: Sony; description: DVD Player, 6.1 Speakers - 5 Disc(s) - Progressive Scan - Dolby Digital, DTS, Dolby Pro Logic II - Black; price: $318.01\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 425,
+  "output_tokens": 30
+ }
+}

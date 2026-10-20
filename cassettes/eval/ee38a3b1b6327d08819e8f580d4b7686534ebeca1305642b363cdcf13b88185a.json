@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG Stainless Steel Freestanding Electric Range - LRE30757SS; description: LG Stainless Steel Freestanding Electric Range - LRE30757SS/ 5.6 Cu. Ft. Capacity/ Dual Convection/ Self-Cleaning/ Touch Controls/ Ceramic Cooktop/ WideView Window/ Warming Drawer/ Interior Oven Light/ Stainless Steel Finish\n\nCandidates:\n1. name: LG 5.6 cu.ft. Freestanding Electric Range; brand: LG Electronics\n2. name: LG 5.6 cu.ft. Freestanding Electric Range; brand: LG Electronics\n3. name: LG 5.6 cu.ft. Freestanding Electric Range; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.0, \"reason\": \"Candidates lack the exact model number LRE30757SS\"}",
+  "input_tokens": 328,
+  "output_tokens": 34
+ }
+}

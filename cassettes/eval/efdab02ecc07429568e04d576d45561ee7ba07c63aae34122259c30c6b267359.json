@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nHow to decide:\n1. Find the model number (letters and digits, e.g. PSLX350H or MDR-J10) in the price-list item.\n2. A candidate with the same model number is the same product, ignoring case, dashes and spaces,\n   and ignoring a colour or variant suffix such as /BLUE or BK/WH on an otherwise identical base\n   model. Different wording, descriptions or prices do not matter.\n3. If no candidate shares the model number, pick one only when brand and product type are the\n   same and the names share distinctive words. Otherwise answer \"none\".\n4. Never answer \"none\" only because the wording or the price differs.\nConfidence: 0.9 or more when the model number matches; 0.6 to 0.8 when brand and product type\nmatch but no model number can be compared; below 0.5 when you are unsure.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG 5.6 Cu. Ft. Black Freestanding Electric Range - LRE30453BK; description: LG 5.6 Cu. Ft. Black Freestanding Electric Range - LRE30453BK/ IntuiTouch Control System/ EvenJet Convection System/ 5.6 Cubic Capacity/ Wideview Oven Window/ 5 Radiant Elements/ 25 Heating Settings/ Black Finish\n\nCandidates:\n1. name: LG 5.6 cu.ft. Freestanding Electric Range; brand: LG Electronics\n2. name: LG 5.6 cu.ft. Freestanding Electric Range; brand: LG Electronics\n3. name: LG 5.6 cu.ft. Freestanding Electric Range; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.9, \"reason\": \"No exact model number match and slight differences in naming\"}",
+  "input_tokens": 466,
+  "output_tokens": 30
+ }
+}

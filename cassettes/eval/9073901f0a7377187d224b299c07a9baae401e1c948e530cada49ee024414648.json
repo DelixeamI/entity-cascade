@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nHow to decide:\n1. Find the model number (letters and digits, e.g. PSLX350H or MDR-J10) in the price-list item.\n2. A candidate with the same model number is the same product, ignoring case, dashes and spaces,\n   and ignoring a colour or variant suffix such as /BLUE or BK/WH on an otherwise identical base\n   model. Different wording, descriptions or prices do not matter.\n3. If no candidate shares the model number, pick one only when brand and product type are the\n   same and the names share distinctive words. Otherwise answer \"none\".\n4. Never answer \"none\" only because the wording or the price differs.\nConfidence: 0.9 or more when the model number matches; 0.6 to 0.8 when brand and product type\nmatch but no model number can be compared; below 0.5 when you are unsure.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Bose In-Ear Black Headphones - BOSEIE; brand: bose; description: Bose In-Ear Black Headphones - BOSEIE/ Comfortable In-Ear Design/ TriPort Acoustic Headphone Structure/ S, M And L Removable Silicone Tips/ Carrying Case/ Black Finish; price: $99.95\n\nCandidates:\n1. name: Sony MDREX81LP Comfort Fit Ear Hanger Headphones- Choose Color (Black); brand: Sony\n2. name: Boss 161 Speaker; brand: BOSE; description: Speaker - Magnetically Shielded; price: $158.00\n3. name: Sony Fontopia Earbuds - MDREX81LPB; brand: Sony; description: Sony MDR-EX81LP/B Stereo Earphones - Black; price: $34.88\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.2, \"reason\": \"No matching model number or brand/product type\"}",
+  "input_tokens": 489,
+  "output_tokens": 28
+ }
+}

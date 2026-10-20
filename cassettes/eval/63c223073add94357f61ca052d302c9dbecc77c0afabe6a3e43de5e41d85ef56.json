@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Uniden Dect 6.0 Accessory Handset  And Charging Cradle - DCX200; brand: uniden; description: Uniden Dect 6.0 Accessory Handset And Charging Cradle - DCX200/ Caller ID/Call Waiting/ DECT 6.0 Interference Free Cordless Frequency/ Handset Speakerphone/ Intercom Or Call Transfer Between Handsets/ 30 Number Caller ID Memory/ Clock Display\n\nCandidates:\n1. name: Uniden DCX300 DECT 6.0 Accessory Handset and Cradle for the DECT2000 series; brand: Uniden\n2. name: Uniden DECT 6.0 1.9GHz Cordless Phone - DECT2080-2; brand: Uniden; description: 1 x Phone Line(s); price: $46.72\n3. name: Uniden TCX905 Cordless Handset - TCX905; brand: Uniden; description: Uniden TCX-905 Tru-Digital Expansion Handset With Caller ID\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number DCX200 exactly.\"}",
+  "input_tokens": 418,
+  "output_tokens": 35
+ }
+}

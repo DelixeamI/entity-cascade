@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Denon X-Space Surround Bar Home Theatre System In Black - DHTFS3; brand: denon; description: Denon X-Space Surround Bar Home Theatre System In Black - DHTFS3/ 22 Watts x 5 (6 Ohms)/ Supports All Audio Formats (Dolby Digital, DTS, Dolby Pro Logic II)/ Slim Design/ Includes Dolby Headphones/ Included Subwoofer Features One-Touch Connection/ Remote Control/ Black Finish; price: $1,199.00\n\nCandidates:\n1. name: Denon DHT-FS3 2-piece Home Theater Audio System; brand: Denon\n2. name: Denon DHT-589BA Home Theater System; brand: Denon; description: , A/V Receiver, 5.1 Speakers - Dolby Pro Logic II, DTS; price: $448.80\n3. name: Denon DHT-FS5 Surround Sound Speaker System; brand: Denon; description: 5.1-channel\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number DHTFS3\"}",
+  "input_tokens": 398,
+  "output_tokens": 29
+ }
+}

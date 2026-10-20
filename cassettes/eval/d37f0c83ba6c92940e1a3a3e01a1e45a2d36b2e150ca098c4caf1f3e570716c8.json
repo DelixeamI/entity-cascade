@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony DVP-FX820 Red 8' Portable DVD Player - DVPFX820R; brand: sony; description: Sony DVP-FX820 Red 8' Portable DVD Player - DVPFX820R/ Swivel & Flip Screen With Dual Sensor For Remote Control/ Control Buttons On Screen Bezel/ 12 Bit Video DAC With 108 MHz Processing/ Removable, Rechargeable Battery & Car Adapter Included/ Red Finish\n\nCandidates:\n1. name: Sony DVP-FX820/R Portable DVD Player - DVPFX820/R; brand: Sony; description: 8' LCD - DVD+RW, DVD-RW, DVD+R, DVD-R, CD-RW - DVD Video, CD-DA, MP3, JPEG Playback - 1 Disc(s) - Red; price: $159.94\n2. name: Sony DVP-FX820 Portable DVD Player - DVPFX820; brand: Sony; description: 8' LCD - DVD+RW, DVD-RW, DVD+R, DVD-R, CD-RW - DVD Video, CD-DA, MP3, JPEG Playback - 1 Disc(s) - Black; price: $158.72\n3. name: Sony DVP-FX820/P Portable DVD Player - DVPFX820/P; brand: Sony; description: 8' LCD - DVD+RW, DVD-RW, DVD+R, DVD-R, CD-RW - DVD Video, CD-DA, MP3, JPEG Playback - 1 Disc(s) - Pink; price: $148.72\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number with color specified as red\"}",
+  "input_tokens": 539,
+  "output_tokens": 30
+ }
+}

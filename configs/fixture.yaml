@@ -1,0 +1,54 @@
+﻿# Same pipeline on the tiny committed slice in tests/fixtures (used by tests and the CI gate).
+seed: 13
+val_fraction: 0.5
+
+dataset:
+  name: abt_buy_fixture
+  archive_url: https://dbs.uni-leipzig.de/files/datasets/Abt-Buy.zip
+  data_dir: tests/fixtures
+  left_file: Abt.csv
+  right_file: Buy.csv
+  mapping_file: abt_buy_perfectMapping.csv
+  left_id: id
+  right_id: id
+  mapping_left_col: idAbt
+  mapping_right_col: idBuy
+  left_name: name
+  right_name: name
+  left_text: [name, description]
+  right_text: [name, description, manufacturer]
+  right_brand: manufacturer
+  left_brand: null
+  new_product_fraction: 0.2
+
+models:
+  embedding: BAAI/bge-small-en-v1.5
+  reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
+  query_instruction: "Represent this sentence for searching relevant passages: "
+
+retrieval:
+  top_k: 20
+  per_mode_k: 50
+  rrf_k: 60
+  qdrant_url: ":memory:"
+  collection: catalog_fixture
+
+thresholds:
+  target_precision: 0.98
+  min_auto_support: 3
+  wilson_z: 0.0
+  llm_min_answerable: 0.5
+  min_llm_support: 3
+  no_match_target_precision: 0.95
+  min_no_match_support: 2
+
+llm:
+  provider: recorded
+  cassette_dir: tests/cassettes
+  model: fake-heuristic-v1
+  max_concurrency: 4
+  timeout_s: 30
+  max_retries: 2
+  backoff_base_s: 0.1
+  top_candidates: 3
+  min_confidence: 0.7

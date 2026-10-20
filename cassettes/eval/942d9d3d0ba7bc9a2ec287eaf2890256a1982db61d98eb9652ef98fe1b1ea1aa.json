@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Lithium Ion Rechargeable Battery - Black Finish - CGRS006A1B; brand: panasonic; description: Panasonic Lithium Ion Rechargeable Battery - CGRS006A1B/ Compatible With DMCFZ7 And DMCFZ30 Digital Cameras\n\nCandidates:\n1. name: Panasonic Lithium Ion Camcorder Battery - VW-VBG130; brand: Panasonic; description: Lithium Ion (Li-Ion) - 7.2V DC - Photo Battery; price: $56.69\n2. name: Panasonic CGA-S007A/1B Lithium Ion Digital Camera Battery; brand: Panasonic; description: Lithium Ion (Li-Ion) - 3.7V DC - Photo Battery\n3. name: Canon NB-4L Rechargeable Camera Battery - 9763A001; brand: Canon; description: Canon NB-4L Lithium Ion Battery; price: $36.89\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 392,
+  "output_tokens": 30
+ }
+}

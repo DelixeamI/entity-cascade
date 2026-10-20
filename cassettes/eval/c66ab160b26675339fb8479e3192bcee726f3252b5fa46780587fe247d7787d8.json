@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon Black 8.0 Megapixel PowerShot Digital Camera - A590IS; brand: canon; description: Canon Black 8.0 Megapixel PowerShot Digital Camera - A590IS/ 8.0 Megapixels/ 4x Optical Zoom/ Optical Image Stabilizer/ Large Bright 2.5' LCD/ 19 Shooting Modes/ Red-Eye Correction/ iSAPS Technology/ Face Detection Technology/ Motion Detection Technology/ Black Finish\n\nCandidates:\n1. name: Canon PowerShot A590 IS Digital Camera - 2462B001; brand: Canon; description: Canon PowerShot A590 IS 8 Megapixels, 4x Optical Zoom, 2.5' LCD, ISO 1600 Digital Camera\n2. name: Canon PowerShot SD990 IS 14 Megapixel Digital Camera w/ 3.7x Optical Zoom, UA Len, Face Detection, 2.5 LCD, & ISO 1600 - Black - 2669B001; brand: Canon; price: $299.88\n3. name: Canon PowerShot SD1100 IS Digital ELPH Camera - Rhythm & Blue - 2512B001; brand: Canon; description: Canon PowerShot SD1100 IS 8 Megapixels, ISO 1600, 3x Optical Zoom Digital Camera - Rhythm & Blue\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number A590IS\"}",
+  "input_tokens": 496,
+  "output_tokens": 30
+ }
+}

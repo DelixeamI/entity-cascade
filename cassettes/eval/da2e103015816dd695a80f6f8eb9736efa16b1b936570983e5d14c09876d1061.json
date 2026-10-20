@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Apple iWork 09 Software Individual Pack For Mac - MB942ZA; brand: apple; description: Apple iWork 09 Software Individual Pack For Mac - MB942ZA/ Creating The Perfect Brochure, Flyer, Report Or Resume Is Faster And Easier Than Ever Using Pages 09/ Create Spreadsheets, Organize Data And Write Formulas With Simple Yet Powerful Tools Using Numbers 09/ Easily Create Sophisticated Animatio...; price: $79.00\n\nCandidates:\n1. name: IWORK 09 RETAIL-INT DVD - MB942Z/A; brand: Apple\n2. name: IWORK 09 FAMILY PACK-INT DVD - MB943Z/A; brand: Apple\n3. name: Apple MacBook Notebook - MB467LLA; brand: Apple; description: Intel Core 2 Duo 2.4GHz - 13.3' WXGA - 2GB DDR3 SDRAM - 250GB HDD - DVD-Writer (DVDR/RW) - Gigabit Ethernet, Wi-Fi, Bluetooth - Mac OS X 10.5 Leopard; price: $1,549.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number MB942Z/A\"}",
+  "input_tokens": 437,
+  "output_tokens": 31
+ }
+}

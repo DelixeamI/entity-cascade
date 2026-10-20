@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Nikon Graphite Black 14.5 Megapixel COOLPIX Digital Camera - COOLPIXS710BK; brand: nikon; description: Nikon Graphite Black 14.5 Megapixel COOLPIX Digital Camera - COOLPIXS710BK/ 14.5 Effective Megapixels/ 3.6x Zoom-NIKKOR Lens/ 3.0' High-Resolution Wide-Viewing Angle LCD Monitor/ Optical Lens Shift VR Image Stabilization/ Food And Smile Mode/ Face-Priority AF/ Camera Red-Eye Fix/ D-Lighting/ Graphit...\n\nCandidates:\n1. name: Nikon COOLPIX S60 10 Megapixel Digital Camera w/ 5x Optical Zoom, Optical VR Image Stabilization, 3.5' High Res Touch Panel LCD, HD Pictmotion Slide Shows, & Autofocus and Auto Exposure - Pink - 26132; brand: Nikon; price: $259.88\n2. name: Nikon Coolpix S550 Digital Camera - Graphite Black - 26108; brand: Nikon; description: 10 Megapixel - 16:9 - 4x Digital Zoom - 2.5' Active Matrix TFT Color LCD; price: $168.72\n3. name: Nikon COOLPIX S710 14 Megapixel Digital Camera w/3.6x Optical Wide-Angle Zoom, 3' LCD, Smile Mode, In-Camera Red-Eye Fix - Black - 26127; brand: Nikon; price: $307.77\n",
+ "response": {
+  "text": "{\"choice\": 3, \"confidence\": 1.0, \"reason\": \"Same brand and model number S710\"}",
+  "input_tokens": 530,
+  "output_tokens": 29
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony White Speaker Dock And Clock Radio For iPod And iPhone - ICFC1IPMK2WHT; brand: sony; description: Sony ICFC1IPMK2 White Speaker Dock And Clock Radio For iPod And iPhone - ICFC1IPMK2WHT/ Unique Adjustable Backstop For iPods/ 3 Wake-Sleep Sound Alert Options/ Digital AM-FM Tuner/ Alarm Clock/ Automatic Time Set/ Automatic Daylight Savings Time/ Battery Charger/ Audio Input/ White Finish\n\nCandidates:\n1. name: SONY IPOD/PHONE DOCK CLOCK RADIO BLACK NIC - ICFC1IPMK2WHI; brand: Sony; price: $61.42\n2. name: SONY IPOD/PHONE DOCK CLOCK RADIO BLACK NIC - ICFC1IPMK2BLK; brand: Sony; price: $80.25\n3. name: iHome IP47BR Bluetooth Clock Radio & Speakerphone for iPhone & iPod - iP47BR; brand: iHome\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The model number and brand match in the first candidate, but the color is different (WHITE vs WHI).\"}",
+  "input_tokens": 390,
+  "output_tokens": 42
+ }
+}

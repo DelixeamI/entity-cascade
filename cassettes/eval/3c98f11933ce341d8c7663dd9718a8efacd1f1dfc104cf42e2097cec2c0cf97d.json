@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Samsung MiniDV Digital Camcorder - SCDC382; brand: samsung; description: Samsung MiniDV Digital Camcorder - SCDC382/ 680K Pixel CCD/ 34X Zoom Lens/ 720 x 480 Pixel Movie Resolution/ Digital Image Stabilizer/ 23 Language Options/ 80 Minute Battery Life\n\nCandidates:\n1. name: Samsung SC-D382 Digital Camcorder; brand: Samsung; description: Samsung SC-D382 Mini DV Camcorder; price: $128.96\n2. name: Samsung NV30 Digital Camera - Silver - EC-NV30ZSBA/US; brand: Samsung; description: Samsung NV30 8 Megapixel Digital Camera with Schneider Lens, Dual Image Stabilization, Smart Touch, and Face Detection - Silver; price: $139.00\n3. name: Samsung L200 Digital Camera - Black - EC-L200ZBBA/US; brand: Samsung; description: Samsung L200 10 Megapixel Digital Camera with 2.5 LCD, 3x Optical Zoom, Digital Image Stabilization, Face Detection Function - Black; price: $119.00\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number SCDC382\"}",
+  "input_tokens": 451,
+  "output_tokens": 30
+ }
+}

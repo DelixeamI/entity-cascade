@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: OmniMount CMK White Wall Cable Management Kit - CMKMINI; description: OmniMount CMK White Wall Cable Management Kit - CMKMINI/ Organize And Hide Cables And Wires/ Able To Cut And Paint To Match Any Wall/ White Finish\n\nCandidates:\n1. name: OmniMount CMK-MINI Mini Wall Mounted Cable Management System; brand: OMNIMOUNT SYSTEMS, INC\n2. name: OmniMount Universal Wall Speaker Mounting Kit - 20.0 WALL-B; brand: OMNIMOUNT SYSTEMS, INC; description: Stainless Steel - 20 lb; price: $24.34\n3. name: OmniMount Stainless Steel Speaker Mount - 20.0 WALL-W; brand: OMNIMOUNT SYSTEMS, INC; description: Stainless Steel - 20 lb\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number CMKMINI\"}",
+  "input_tokens": 354,
+  "output_tokens": 29
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Electrolux Oxygen 3 Canister HEPA H12 Filter - EL012A; description: Electrolux Oxygen 3 Canister HEPA H12 Filter - EL012A/ Retains 99.5% Of Dust And Other Irritants/ 1 Filter Per Package; price: $19.99\n\nCandidates:\n1. name: Harmony EL6985A Vacuum (Canister, HEPA); brand: Eureka\n2. name: ELECTROLUX STICK VACUUM REPLACES EL1000A; brand: Eureka\n3. name: Nintendo DS Lite (Cobalt Blue and Black) - USGSBMKB; brand: Nintendo Of America\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 333,
+  "output_tokens": 34
+ }
+}

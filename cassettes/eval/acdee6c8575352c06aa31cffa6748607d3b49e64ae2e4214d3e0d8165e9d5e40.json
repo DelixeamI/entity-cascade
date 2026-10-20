@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sanus Euro Foundations Satellite Speaker Stand - EFSATS; brand: sanus; description: Sanus Euro Foundations Satellite Speaker Stand - EFSATS/ Sturdy Base/ Adjustable Pillar And Floor Spikes/ Includes Three Different Speaker Mounting Methods/ Contemporary European Design/ Satin Powder-Coated Silver Finish/ Priced Per Pair; price: $79.99\n\nCandidates:\n1. name: Sanus Euro Foundation Series III Speaker Stand - EFSATSIII; brand: Sanus; description: Steel - Silver\n2. name: Sanus Euro Foundation Series III Speaker Stand - EFSATBKIII; brand: Sanus; description: Steel - Black\n3. name: Sanus Center Channel Speaker Mount - VMCC1B; brand: Sanus; description: Steel\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Model number mismatch\"}",
+  "input_tokens": 342,
+  "output_tokens": 23
+ }
+}

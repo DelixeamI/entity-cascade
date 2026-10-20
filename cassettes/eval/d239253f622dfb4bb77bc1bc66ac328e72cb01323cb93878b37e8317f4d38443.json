@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Nintendo DS Lite Metallic Rose Portable Gaming System - NDSUSGSZPB; description: Nintendo DS Lite Metallic Rose Portable Gaming System - NDSUSGSZPB/ Dual 3' TFT Color LCD Touchscreens/ Slimmer Design/ Dual Slot Compatibility (DS Lite/Game Boy Advance Game Paks)/ Twin Ultra Bright LCD Screens/ Up To 19 Hours Continuous Gameplay/ Nintendo Wi-Fi Connection/ Impressive 3D Graphics/...; price: $139.00\n\nCandidates:\n1. name: Nintendo DS Lite (Metallic Rose) - USGSZPB; brand: Nintendo Of America\n2. name: Nintendo DS Lite (Cobalt Blue and Black) - USGSBMKB; brand: Nintendo Of America\n3. name: Nintendo DS Lite (Black Onyx) - USGSKB; brand: Nintendo Of America\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 355,
+  "output_tokens": 25
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Nikon Black 13.5 Megapixel COOLPIX Digital Camera - COOLPIXP6000BK; brand: nikon; description: Nikon Black 13.5 Megapixel COOLPIX Digital Camera - COOLPIXP6000BK/ 13.5 Effective Megapixels/ 4x Zoom-NIKKOR Lens/ 2.7' High-Resolution Wide-Viewing Angle LCD Monitor/ Optical Lens Shift VR Image Stabilization/ Wired LAN Connectivity/ Built-In GPS Unit/ Wireless Remote Control/ In-Camera Red-Eye Fi...\n\nCandidates:\n1. name: Nikon COOLPIX S60 10 Megapixel Digital Camera w/ 5x Optical Zoom, Optical VR Image Stabilization, 3.5' High Res Touch Panel LCD, HD Pictmotion Slide Shows, & Autofocus and Auto Exposure - Pink - 26132; brand: Nikon; price: $259.88\n2. name: Nikon COOLPIX P6000 13 Megapixels Digital Camera w/ 4x Wide Angle Optical Zoom, 2.7' Hi-Res LCD, Optical VR Image Stabilization, Face Priority AF & TV Movies with Sound - Black - 26135; brand: Nikon\n3. name: Nikon Coolpix S550 Digital Camera - Graphite Black - 26108; brand: Nikon; description: 10 Megapixel - 16:9 - 4x Digital Zoom - 2.5' Active Matrix TFT Color LCD; price: $168.72\n",
+ "response": {
+  "text": "{\"choice\": 2, \"confidence\": 1.0, \"reason\": \"Same brand and model number COOLPIX P6000\"}",
+  "input_tokens": 524,
+  "output_tokens": 33
+ }
+}

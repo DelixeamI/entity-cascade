@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon Black Rechargeable Battery - 9612A001; brand: canon; description: Canon Black Rechargeable Battery - 9612A001/ Lithium-Ion Technology/ Compatible With Canon Digital Rebel XT And PowerShot S Series Digital Cameras/ Also Compatible With Canon Elura Series, OPTURA Series And ZR Series Camcorders/ Black Finish\n\nCandidates:\n1. name: Canon NB-4L Rechargeable Camera Battery - 9763A001; brand: Canon; description: Canon NB-4L Lithium Ion Battery; price: $36.89\n2. name: Canon CB-2LX Battery Charger - 1133B001; brand: Canon\n3. name: Canon Canon CB-2LW Battery Charger - 0763B001; brand: Canon\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 367,
+  "output_tokens": 34
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Cuisinart Convection-Oven-Toaster-Broiler With Exact Heat Sensor - TOB165WH; brand: cuisinart; description: Cuisinart Convection-Oven-Toaster-Broiler With Exact Heat Sensor - TOB165WH/ 0.5 Cubic Foot Oven Capacity/ LED Indicators/ Individual Or Combination Settings/ Always Even Shade Control/ 4 Hour Automatic Shut Off/ Slide-Out Crumb Tray/ Includes Broiling Pan/ White Finish; price: $149.00\n\nCandidates:\n1. name: White .5 cu. ft 1500 Watt Convection/Broiler/Toaster Oven; brand: Cuisinart; price: $149.00\n2. name: Cuisinart TOB-195 Cuisinart Exact Heat Convection Toaster Oven Broiler - TOB195; brand: Cuisinart; price: $178.99\n3. name: Cuisinart TOB-155 Toaster Oven Broiler; brand: Cuisinart; price: $139.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact model number TOB165WH.\"}",
+  "input_tokens": 424,
+  "output_tokens": 34
+ }
+}

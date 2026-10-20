@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony 3.1 Channel Home Theater Surround System In Black - HTCT100; brand: sony; description: Sony 3.1 Channel Home Theater Surround System In Black - HTCT100/ HDMI Active Intelligence/ LPCM Playback/ 3.1 Channel/ S-Force Surround/ BRAVIA® Sync/ Digital Media Port/ Black Finish/ ETA MID JANUARY 2009; price: $299.00\n\nCandidates:\n1. name: Sony HT7200DH Home Theater System; brand: Sony; description: DVD Player, A/V Receiver, 5.1 Speakers - 1 Disc(s) - Progressive Scan - 1000W RMS - Dolby Digital, Dolby Pro Logic, Dolby Pro Logic II, DTS; price: $376.96\n2. name: Sony BRAVIA DAV-HDX279WC Home Theater System; brand: Sony; description: DVD Player, 6.1 Speakers - 5 Disc(s) - Progressive Scan - Dolby Digital, DTS, Dolby Pro Logic II - Black; price: $318.01\n3. name: Sony HT-DDWG700 Home Theater System - HTDDWG700; brand: Sony; description: DVD Player, 5.1 Speakers - 900W RMS - DTS, Dolby Digital, Dolby Pro Logic II; price: $206.96\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number HTCT100.\"}",
+  "input_tokens": 493,
+  "output_tokens": 34
+ }
+}

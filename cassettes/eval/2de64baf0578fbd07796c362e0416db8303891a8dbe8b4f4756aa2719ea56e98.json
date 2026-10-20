@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nHow to decide:\n1. Find the model number (letters and digits, e.g. PSLX350H or MDR-J10) in the price-list item.\n2. A candidate with the same model number is the same product, ignoring case, dashes and spaces,\n   and ignoring a colour or variant suffix such as /BLUE or BK/WH on an otherwise identical base\n   model. Different wording, descriptions or prices do not matter.\n3. If no candidate shares the model number, pick one only when brand and product type are the\n   same and the names share distinctive words. Otherwise answer \"none\".\n4. Never answer \"none\" only because the wording or the price differs.\nConfidence: 0.9 or more when the model number matches; 0.6 to 0.8 when brand and product type\nmatch but no model number can be compared; below 0.5 when you are unsure.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Electrolux Oxygen 3 Canister HEPA H12 Filter - EL012A; description: Electrolux Oxygen 3 Canister HEPA H12 Filter - EL012A/ Retains 99.5% Of Dust And Other Irritants/ 1 Filter Per Package; price: $19.99\n\nCandidates:\n1. name: Harmony EL6985A Vacuum (Canister, HEPA); brand: Eureka\n2. name: ELECTROLUX STICK VACUUM REPLACES EL1000A; brand: Eureka\n3. name: Nintendo DS Lite (Cobalt Blue and Black) - USGSBMKB; brand: Nintendo Of America\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 0.2, \"reason\": \"No matching model number or brand/product type\"}",
+  "input_tokens": 458,
+  "output_tokens": 28
+ }
+}

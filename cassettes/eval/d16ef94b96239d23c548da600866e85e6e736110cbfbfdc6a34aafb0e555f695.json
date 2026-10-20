@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic VIERA 32' Class Widescreen LCD HDTV In Black - TC32LZ800; brand: panasonic; description: Panasonic VIERA 32' Class Widescreen LCD HDTV In Black - TC32LZ800/  IPS High-Definition LCD Panel/ 10000:1 Contrast Ratio/ 178° Wide Viewing Angle/ 6.7ms Response/ Intelligent Scene Controller/ Built-In SD Card Slot/ 3 HDMI Inputs And DVI Audio Input/ Simulated Surround Sound/ Black Finish\n\nCandidates:\n1. name: Panasonic VIERA TC-37LZ85 37' LCD TV; brand: Panasonic; description: 37' - ATSC, NTSC - 16:9 - 1920 x 1080 - HDTV; price: $799.11\n2. name: Panasonic VIERA TC-26LX85 26' LCD TV; brand: Panasonic; description: 26' - ATSC, NTSC - 16:9 - 1366 x 768 - HDTV; price: $547.92\n3. name: Panasonic Viera TH-46PZ80U 46' Plasma TV; brand: Panasonic; description: 46' - ATSC, NTSC - 16:9 - 1920 x 1080 - Surround - HDTV; price: $1,249.94\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number TC32LZ800\"}",
+  "input_tokens": 520,
+  "output_tokens": 36
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Weber Cast Iron Griddle - 7531; brand: weber; description: Weber Cast Iron Griddle - 7531/ Heavy-Duty Cast Iron Griddle/ Fits Weber Genesis Silver A & Spirit 500 Gas Grills; price: $44.99\n\nCandidates:\n1. name: Weber Cast Iron Griddle for Genesis B,C, 1000 - 5500 & Spirit E & S 300 Series; brand: Weber\n2. name: Weber Cast Iron Griddle for Genesis Silver As and Spirit 500s & Spirit 200 Series; brand: Weber\n3. name: Weber Summit Series S-450 74 1/10' Freestanding Gas Grill with 838 sq. in. Cooking Surface, 6 Stainless Steel Burners, Rotisserie Burner, Stainless Steel Smoker Box & Stainless Steel Work Surface: LP Gas; brand: Weber\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact model number 7531.\"}",
+  "input_tokens": 384,
+  "output_tokens": 33
+ }
+}

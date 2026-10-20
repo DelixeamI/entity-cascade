@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Olympus Lithium Ion Rechargeable Battery - LI42B; brand: olympus; description: Olympus LI-42B Lithium Ion Rechargeable Battery - LI42B/ Compatible With Stylus 730, 7200SW, 770SE, 710, 740 And FE230\n\nCandidates:\n1. name: Olympus PS-BLS1 Lithium Ion Digital Camera Battery - 260236; brand: Olympus; description: Lithium Ion (Li-Ion) - Photo Battery\n2. name: Nikon EN-EL3e Lithium Ion Digital Camera Battery - 25334; brand: Nikon; description: Nikon EN-EL3e Rechargeable Li-ion Battery; price: $34.24\n3. name: Olympus B-90SU AA/AAA Size Battery Charger - 200899; brand: Olympus\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the LI42B battery.\"}",
+  "input_tokens": 382,
+  "output_tokens": 36
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Bose SL2 Wireless Black Surround Link - SL2WIRELESS; brand: bose; description: Bose SL2 Wireless Black Surround Link - SL2WIRELESS/ Transmitter And Receiver Work On A Radio Frequency Signal Effective From Up To 30 Feet In The Same Room/ Compatible With All Lifestyle Systems, CD-Based Models And All 5.1-Channel Acoustimass Home Entertainment Systems/ Black Finish; price: $249.00\n\nCandidates:\n1. name: Boss 161 Speaker; brand: BOSE; description: Speaker - Magnetically Shielded; price: $158.00\n2. name: Bose PMCII Remote Control; brand: BOSE; description: DVD Player, TV, VCR, Tuner, Amplifier, CD Player, Cable Box, Satellite Receiver, PVR (Personal Video Recorder) - 80 ft - DVD Player Remote; price: $145.37\n3. name: Klipsch RoomGroove Wireless iPod Speaker System - 1006602; brand: Klipsch; description: Black; price: $199.99\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 422,
+  "output_tokens": 34
+ }
+}

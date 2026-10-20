@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Whirlpool 24' Built-In Dishwasher - DU1100SS; brand: whirlpool; description: Whirlpool 24' Built-In Dishwasher - DU1100SS/ 14-Five Piece Place Setting Super Capacity Tub/ 5 Level Wash/ Temperature And Pressure Sensors/ 4 Automatic Cycles/ Soak And Scour Option/ AnyWare Plus Silverware Basket/ Hard Food Disposer With Self-Cleaning Filter/ Quiet Partner II Sound Package/ Energ...\n\nCandidates:\n1. name: Whirlpool DU1100XTPS 24' Undercounter Dishwasher (Stainless Steel); brand: Whirlpool; price: $537.29\n2. name: Whirlpool DU1055XTSS 6' Console Undercounter Dishwasher (Stainless Steel); brand: Whirlpool; price: $359.00\n3. name: Whirlpool 27' DUET WASHER HORIZ AXIS WP; brand: Whirlpool; price: $910.91\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number DU1100SS exactly.\"}",
+  "input_tokens": 408,
+  "output_tokens": 34
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: GE Futura Indoor TV Antenna - Silver Finish - TV24746; brand: ge; description: GE Futura Indoor TV Antenna - TV24746/ Specially Designed To Receive Digital TV Signal/ 20dB Gain Amplification/ Noise Eliminator Circuitry Filter/ Designed To Mount Horizontally Or Vertically\n\nCandidates:\n1. name: Ge 24746 Futura(tm) Indoor Hdtv Antenna; brand: GE; price: $29.72\n2. name: GE Millennium TV Antenna - 24734; brand: GE\n3. name: GE 24775 Amplified Quantum HDTV Antenna; brand: GE\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number TV24746\"}",
+  "input_tokens": 331,
+  "output_tokens": 31
+ }
+}

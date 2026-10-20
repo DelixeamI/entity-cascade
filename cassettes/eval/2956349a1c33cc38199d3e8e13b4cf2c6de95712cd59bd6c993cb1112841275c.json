@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony BRAVIA Black SXRD 1080p Home Theater Front Projector - VPLHW10; brand: sony; description: Sony BRAVIA Black SXRD 1080p Home Theater Front Projector - VPLHW10/ SXRD 1920 x 1080p Full HD Panels/ 30,000:1 Dynamic Contrast Ratio/ Fully Digital Signal Processing/ 200Watts Ultra-High-Pressure Lamp/ Whisper-Quiet Fan Noise And Noise Reduction Function/ Two HDMI Inputs/ BRAVIA Theatre Sync/ Remo...; price: $3,499.00\n\nCandidates:\n1. name: Sony BRAVIA DAV-HDX279WC Home Theater System; brand: Sony; description: DVD Player, 6.1 Speakers - 5 Disc(s) - Progressive Scan - Dolby Digital, DTS, Dolby Pro Logic II - Black; price: $318.01\n2. name: Sony BRAVIA DAV-HDX576WF Home Theater System; brand: Sony; description: DVD Player, Amplifier, 5.1 Speakers - 5 Disc(s) - Progressive Scan - 1000W RMS - Dolby Pro Logic II; price: $478.72\n3. name: Sony BRAVIA DAV-HDX275 Home Theater System; brand: Sony; description: , 5.1 Speakers - 5 Disc(s) - Progressive Scan - 1000W RMS - Dolby Pro Logic II\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 518,
+  "output_tokens": 34
+ }
+}

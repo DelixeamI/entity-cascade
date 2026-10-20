@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Logitech Driving Force Pro Steering Wheel With Pedals Set For Sony Playstation 2 - 9632930403; brand: logitech; description: Logitech Driving Force Pro Steering Wheel With Pedals Set For Sony Playstation 2 - 9632930403/ Comfortable Soft Full Rubber Wheel/ Realistically Turn Through 2.5 Times Wheel Rotation/ 900 Degrees Of wheel Steering/ State-Of-The-Art Force Feedback Technology/ Stick Shifter/ Responsive Gas And Brake P...; price: $129.00\n\nCandidates:\n1. name: Logitech Driving Force Pro for PlayStation 2 - 963293-0403; brand: Logitech\n2. name: Logitech Harmony 890 Advanced Universal Remote - 966193-0403; brand: Logitech; price: $248.90\n3. name: Logitech Digital Precision PC Gaming Headset - 981-000040; brand: Logitech; description: Logitech Digital Precision PC Headset; price: $31.99\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number\"}",
+  "input_tokens": 428,
+  "output_tokens": 25
+ }
+}

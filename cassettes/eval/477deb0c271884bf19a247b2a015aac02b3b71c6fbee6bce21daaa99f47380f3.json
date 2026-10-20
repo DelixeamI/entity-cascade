@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Lasonic ATSC Digital To Analog TV Converter Box - LTA260; brand: lasonic; description: Lasonic ATSC Digital To Analog TV Converter Box - LTA260/ Support 4:3 And 16:9 Video Format/ Composite Video And Stereo Audio Output/ Supports Channel Display, Closed Caption, EAS And Parental Controls (V-Chip)/ Display ANT Level And Signal Quality On The TV/ Black Finish\n\nCandidates:\n1. name: Elgato EyeTV Hybrid Analog/Digital TV Tuner Stick - 10020630; brand: ELGATO SYSTEMS; description: Elgato EyeTV Hybrid TV Tuner Stick for Analog and HDTV Reception - USB\n2. name: Elgato EyeTV 250 Plus TV Tuner - 10020780; brand: ELGATO SYSTEMS; description: Elgato EyeTV 250 Plus Video Converter and TV Tuner for Analog and HDTV Reception\n3. name: Panasonic VIERA TC-26LX85 26' LCD TV; brand: Panasonic; description: 26' - ATSC, NTSC - 16:9 - 1366 x 768 - HDTV; price: $547.92\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the Lasonic LTA260.\"}",
+  "input_tokens": 461,
+  "output_tokens": 38
+ }
+}

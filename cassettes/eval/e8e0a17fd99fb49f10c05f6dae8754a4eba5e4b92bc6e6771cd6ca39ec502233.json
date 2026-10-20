@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony LCS-TWA/R Red Soft Leather Carrying Case - LCSTWAR; brand: sony; description: Sony LCS-TWA/R Red Soft Leather Carrying Case - LCSTWAR/ Genuine Leather Construction/ Compatible With Cyber-Shot W And T Series Digital Cameras/ Integrated Belt Loop And Magnetic Closure/ Red Finish\n\nCandidates:\n1. name: Sony LCS-TWA/R Cyber-shot Camera Case; brand: Sony; description: Top Loading - Leather - Red; price: $27.92\n2. name: Sony LCS-TWA/B Cyber-shot Camera Case - LCSTWA/B; brand: Sony; description: Top Loading - Leather - Black; price: $34.00\n3. name: Sony LCS Soft Carrying Case - LCSCST; brand: Sony; description: Sony LCS-CST Soft Carrying Case for Ultra-Compact Digital Cameras; price: $9.95\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number LCS-TWA/R\"}",
+  "input_tokens": 366,
+  "output_tokens": 29
+ }
+}

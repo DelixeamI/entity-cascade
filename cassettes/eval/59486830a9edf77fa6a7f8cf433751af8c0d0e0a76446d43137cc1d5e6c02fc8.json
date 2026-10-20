@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Cyber-Shot Black Digital Camera - DSCT500B; brand: sony; description: Sony Cyber-Shot Black Digital Camera - DSCT500B/ 10.1 Megapixels/ 720p HD Video Recording/ 3.5' LCD Plus Touch Screen Display/ 4MB Internal Memory/ Carl Zeiss 5X Optical Zoom Lens/ 16:9 High-Resolution Mode/ High Sensitivity Mode/ Burst Mode/ Face Detection Technology/ High Sensitivity ISO 3200/ In-...\n\nCandidates:\n1. name: Sony Cyber-shot DSC-H50 Digital Camera - Black - DSCH50B; brand: Sony; description: 9.1 Megapixel - 16:9 - 2x Digital Zoom - 3' Active Matrix TFT Color LCD; price: $329.00\n2. name: Sony Cyber-shot DSC-T300 Digital Camera - Black - DSCT300/B; brand: Sony; description: 10.1 Megapixel - 16:9 - 2x Digital Zoom - 3.5' Active Matrix TFT Color LCD; price: $273.95\n3. name: Sony LCS-CSL Cyber-shot Camera Case; brand: Sony; description: Top Loading - Leather - Black\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 462,
+  "output_tokens": 30
+ }
+}

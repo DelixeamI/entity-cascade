@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony White Cybershot T Series Digital Camera Jacket Case With Stylus - LCJTHCW; brand: sony; description: Sony White Cybershot T Series Digital Camera Jacket Case With Stylus - LCJTHCW/ For 2007 Cybershot T Series Camera/ Stylus Included/ Custom-Fitted/ White Finish\n\nCandidates:\n1. name: Sony LCS-TWA/B Cyber-shot Camera Case - LCSTWA/B; brand: Sony; description: Top Loading - Leather - Black; price: $34.00\n2. name: Sony LCS-TWA/R Cyber-shot Camera Case; brand: Sony; description: Top Loading - Leather - Red; price: $27.92\n3. name: Sony LCS-CSL Cyber-shot Camera Case; brand: Sony; description: Top Loading - Leather - Black\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"Model number and description do not match any candidates exactly.\"}",
+  "input_tokens": 357,
+  "output_tokens": 31
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Speck SeeThru Aqua Hard Shell Case For 20' iMac - IM20AQUSEE; description: Speck SeeThru Aqua Hard Shell Case For 20' iMac - IM20AQUSEE/ Adds Color And Style To iMac/ Easy And Safe To Use/ Totally Removable/ Case Does Not Cover The Screen Or Camera/ Fits 20' Widescreen iMac/ Aqua Finish\n\nCandidates:\n1. name: Speck Products SeeThru Case for Apple MacBook Air - MBA-CLR-SEE; brand: Speck Products; description: Plastic - Clear\n2. name: Speck Products SeeThru Case for Apple 13' MacBook - MB13-AQU-SEE-V2; brand: Speck Products; description: Plastic - Aqua\n3. name: Speck Products SeeThru Case for Apple MacBook Air - MBA-PNK-SEE; brand: Speck Products; description: Plastic - Pink\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number of the price-list item.\"}",
+  "input_tokens": 380,
+  "output_tokens": 34
+ }
+}

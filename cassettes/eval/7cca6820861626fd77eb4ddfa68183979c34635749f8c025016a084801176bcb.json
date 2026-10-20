@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Toshiba Black 9-Inch LCD Widescreen Portable DVD Player - SDP91S; brand: toshiba; description: Toshiba Black Portable DVD Player - SDP91S/ 9' Widescreen TFT LCD Display/ Up To 5 Hour Lithium Battery Life/ Official DivX Certified/ Switchable Audio/Video Input And Output/ Swivel And Flip Type Screen/ Black Finish\n\nCandidates:\n1. name: Toshiba 19LV506 - 19' Widescreen LCD HDTV w/ Built-in DVD Player - 800:1 Contrast Ratio - 5ms Response Time - White; brand: Toshiba\n2. name: Toshiba SD-P71S Portable DVD Player; brand: Toshiba; description: Toshiba SD-P71S - 7' Portable DVD Player; price: $119.36\n3. name: Toshiba 19LV505 - 19' Widescreen LCD HDTV w/ Built-in DVD Player - 800:1 Contrast Ratio - 5ms Response Time; brand: Toshiba\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number SDP91S.\"}",
+  "input_tokens": 408,
+  "output_tokens": 34
+ }
+}

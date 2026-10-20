@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Yamaha 7.2 Channel Black Digital Home Theater Receiver - RXV863BK; brand: yamaha; description: Yamaha 7.2 Channel Black Digital Home Theater Receiver - RXV863BK/ 4 SCENE Buttons/ XM Ready With XM HD Surround/ SIRIUS Satellite Radio Ready/ YPAO/ iPod Compatibility/ Bluetooth Compatibility/ Multi-Zone Control Compatibility/ On-Screen Display/ Black Finish/ CALL FOR LATEST PRICE; price: $899.00\n\nCandidates:\n1. name: Yamaha RX-V663 Home Theater Receiver - RXV663BL; brand: Yamaha; description: 665W - Dolby TrueHD, Dolby Digital EX, Dolby Pro Logic IIx, Dolby Digital Plus, DTS-HD, DTS-ES, DTS 96/24, DTS Neo:6, Neural SurroundXM; price: $499.00\n2. name: Yamaha RX-V363 Home Theater Receiver - RXV363BL; brand: Yamaha; description: 500W - Dolby Digital, Dolby Pro Logic II, DTS; price: $199.00\n3. name: Onkyo HTS5100 Home Theater System - HTS5100B; brand: Onkyo; description: , A/V Receiver, 7.1 Speakers - 1200W RMS - Dolby Pro Logic IIx, Dolby Digital, Dolby Digital EX, DTS, DTS-ES, DTS Neo:6, DTS 96/24 - Black; price: $478.72\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"The model number RXV863BK does not match any candidate.\"}",
+  "input_tokens": 539,
+  "output_tokens": 35
+ }
+}

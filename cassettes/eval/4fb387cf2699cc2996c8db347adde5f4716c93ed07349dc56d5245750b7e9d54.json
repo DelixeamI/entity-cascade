@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Cuisinart Automatic Brew And Serve Coffeemaker - DTC975BK; brand: cuisinart; description: Cuisinart Automatic Brew And Serve Coffeemaker - DTC975BK/ 12-Cup Double-Wall Insulated Stainless Steel Carafe/ Fully Automatic With 24-Hour Programmability/ Patented Brew-Through And Pour-Through Lid/ Brew Pause Feature/ Automatic Shutoff/ Black And Stainless Steel Finish; price: $99.95\n\nCandidates:\n1. name: Cuisinart Cordless Automatic Electric Kettle; brand: Cuisinart; price: $69.95\n2. name: Cuisinart Brew & Serve Stainless Therm Black 10-Cup Coffee Maker; brand: Cuisinart; price: $99.95\n3. name: Cuisinart GR-4 Griddler Four Multifunctional Cooking Options; brand: Cuisinart; price: $129.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 394,
+  "output_tokens": 30
+ }
+}

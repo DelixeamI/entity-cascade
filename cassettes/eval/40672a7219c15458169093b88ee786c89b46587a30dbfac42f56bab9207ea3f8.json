@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG LFC25770SW 25.0 Cu. Ft. Smooth White French Door Bottom Freezer Refrigerator - LFC25770WH; description: LG LFC25770SW 25.0 Cu. Ft. Smooth White French Door Bottom Freezer Refrigerator - LFC25770WH/ 4 Slide Out Tempered Glass Shelves/ Internal LED Touch Pad Digital Temperature Controls/ 2 Humidity Crispers/ 4 Compartment Crisper System/ Multi Air Flow Cooling/ IcePlus Accelerated Freezing Function/ LoD...\n\nCandidates:\n1. name: LG 24.7 cu. ft. Stainless Steel French Door Bottom Mount Refrigerator; brand: LG Electronics\n2. name: LG 25 CF Refrigerator 3 Door White Tall; brand: LG Electronics\n3. name: LG 25 Cu.Ft. Total Capacity 4 Door Refrigerator; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number exactly.\"}",
+  "input_tokens": 380,
+  "output_tokens": 30
+ }
+}

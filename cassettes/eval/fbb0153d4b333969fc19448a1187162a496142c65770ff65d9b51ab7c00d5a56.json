@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Yamaha NS-AW390BL All-Weather Pair Speaker System - NSAW390BK; brand: yamaha; description: Yamaha NS-AW390BL All-Weather Speaker System - NSAW390BK/ 6.5' High Compliance/ PP Mica Filled Woofers/ Unique Dual 1' PEI Dome Tweeter Configuration/ Aluminum Speaker Grilles/ Wall Mountable/ Black Finish/ Sold As A Pair; price: $149.00\n\nCandidates:\n1. name: Yamaha Outdoor NS-AW390 All-Weather Speaker System - NS-AW390BL; brand: Yamaha; description: 2-way Speaker - Cable - Black; price: $78.89\n2. name: Yamaha Outdoor NS-AW390 All-Weather Speaker System - NS-AW390WH; brand: Yamaha; description: 2-way Speaker - Cable - White; price: $79.96\n3. name: Yamaha NS-AW190 All-Weather Speaker System - NS-AW190BL; brand: Yamaha; description: 2-way Speaker - Cable - Black; price: $51.72\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the exact model number NS-AW390BL or NSAW390BK.\"}",
+  "input_tokens": 435,
+  "output_tokens": 42
+ }
+}

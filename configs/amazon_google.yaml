@@ -1,0 +1,54 @@
+﻿# Second domain, same code. Amazon is the price list, Google Products the catalog.
+# Unlike Abt-Buy, 250 of 1363 Amazon rows have no true pair, so no synthetic new products.
+seed: 13
+val_fraction: 0.5
+
+dataset:
+  name: amazon_google
+  archive_url: https://dbs.uni-leipzig.de/files/datasets/Amazon-GoogleProducts.zip
+  data_dir: data/raw/amazon_google
+  left_file: Amazon.csv
+  right_file: GoogleProducts.csv
+  mapping_file: Amzon_GoogleProducts_perfectMapping.csv
+  left_id: id
+  right_id: id
+  mapping_left_col: idAmazon
+  mapping_right_col: idGoogleBase
+  left_name: title
+  right_name: name
+  left_text: [title, description]
+  right_text: [name, description, manufacturer]
+  left_brand: manufacturer
+  right_brand: manufacturer
+  new_product_fraction: 0.0
+
+models:
+  embedding: BAAI/bge-small-en-v1.5
+  reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
+  query_instruction: "Represent this sentence for searching relevant passages: "
+
+retrieval:
+  top_k: 20
+  per_mode_k: 50
+  rrf_k: 60
+  qdrant_url: ":memory:"
+  collection: catalog_amazon_google
+
+rerank:
+  query_fields: [title]
+
+thresholds:
+  target_precision: 0.98
+  min_auto_support: 20
+  wilson_z: 0.0
+  llm_min_answerable: 0.5
+  min_llm_support: 10
+  no_match_target_precision: 0.95
+  min_no_match_support: 10
+
+llm:
+  provider: recorded
+  base_url: http://localhost:11434/v1
+  model: unset
+  api_key_env: LLM_API_KEY
+  cassette_dir: cassettes/eval_amazon_google

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony Black Active Speaker System - SRSA212BK; brand: sony; description: Sony Black Active Speaker System - SRSA212BK/ Designed For Your Portable Audio Or PC/ Built-In Mega Bass/ On/Off Switch With Volume Control/ Magnetically Shielded/ Black Finish; price: $29.00\n\nCandidates:\n1. name: Computer Speakers - SRSA212/BLK; brand: Sony; price: $22.53\n2. name: Sony PSP Core System (Piano Black) (Slim Model with AV Video Out Port) - 98510; brand: Sony\n3. name: Sony SRS-BTM30 Wireless Stereo Bluetooth Speaker - SRSBTM30; brand: Sony\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number SRSA212BK\"}",
+  "input_tokens": 341,
+  "output_tokens": 31
+ }
+}

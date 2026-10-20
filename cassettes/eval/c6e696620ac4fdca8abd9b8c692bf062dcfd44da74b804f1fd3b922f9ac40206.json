@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Denon 7.1 Channel AV Receiver With Network Client Compatible D-Dock Port In Black - AVR2809CI; brand: denon; description: Denon 7.1 Channel AV Home Theater Surround Receiver With Network Client Compatible D-Dock Port In Black - AVR2809CI/ 110 Watts x 7 Channels/ 1080p Upscaling/ PC Setup And Control Capability Via RS-232C/ Network Capable/ XM Satellite Radio Ready/ Dolby TrueHD And DTS-HD Master Audio/ HDMI 1.3a Repeat...; price: $1,199.99\n\nCandidates:\n1. name: Denon AVR2809CI A/V Receiver; brand: Denon; description: Dolby Pro Logic IIx, Dolby Digital EX, DTS-ES Discrete, DTS-ES Matrix, DTS Neo:6, Dolby TrueHD, Dolby Digital Plus, Neural SurroundAM, FM; price: $1,198.00\n2. name: Denon AVR-4308CI A/V Receiver - AVR4308CI; brand: Denon; description: Dolby Pro Logic IIx, Dolby Digital Surround, DTS-ES, DTS Neo:6, DTS 96/24, Neural SurroundFM, AM, XM; price: $1,849.77\n3. name: Denon AVR-1609 A/V Receiver - AVR1609; brand: Denon; description: Dolby Digital Surround, Dolby Pro Logic IIx, DTS-ES, DTS Neo:6, DTS 96/24FM, AM; price: $348.00\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Brand and model number match exactly\"}",
+  "input_tokens": 557,
+  "output_tokens": 26
+ }
+}

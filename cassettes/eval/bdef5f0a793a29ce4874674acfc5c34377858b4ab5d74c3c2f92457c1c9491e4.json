@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: LG DLE5955W White XL Capacity Electric Dryer - DLE5955WH; description: LG DLE5955W White XL Capacity Electric Dryer - DLE5955WH/ 7.3 Cu. Ft. Capacity/ 9 Drying Programs/ 5 Temperature Levels/ Precise Temperature Control With Variable Heat Source/ FlowSense Duct Clogging Indicator/ Upfront Electronic Control Panel With Dual LED Display And Dial-A-Cycle/ LoDecibel Quiet...\n\nCandidates:\n1. name: LG XL Capacity Electric Dryer; brand: LG Electronics\n2. name: LG 27' Front-Load Electric Dryer with 7.3 cu. ft. Capacity; brand: LG Electronics\n3. name: LG Electronics 24' Washer/Dryer Combo: White; brand: LG Electronics\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number DLE5955WH.\"}",
+  "input_tokens": 356,
+  "output_tokens": 36
+ }
+}

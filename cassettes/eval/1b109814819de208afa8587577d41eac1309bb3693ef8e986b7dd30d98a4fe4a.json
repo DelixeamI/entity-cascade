@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sharp Over The Counter White Microwave Oven - R1211WH; brand: sharp; description: Sharp Over The Counter White Microwave Oven - R1211WH/ 1.5 Cu. Ft. Capacity/ 1100 Watts/ 19 Automatic Settings/ 2-Color Lighted LCD/ Smart And Easy Sensor Settings/ Auto-Touch Control Panel/ White Finish; price: $269.00\n\nCandidates:\n1. name: Sharp 1100 Watt Over the Counter Microwave; brand: Sharp\n2. name: Sharp R-1214 Microwave Oven - R-1214; brand: Sharp; description: SHARP Over-the-Counter Stainless Mircowave Oven - R1214; price: $380.67\n3. name: Panasonic NNSN667W 1.2 cu. ft. Countertop Microwave Oven In White; brand: Panasonic; price: $107.81\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number (R1211WH)\"}",
+  "input_tokens": 390,
+  "output_tokens": 33
+ }
+}

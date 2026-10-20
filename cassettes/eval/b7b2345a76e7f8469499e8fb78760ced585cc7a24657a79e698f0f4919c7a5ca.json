@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Canon Silver PowerShot Digital Camera - SD880IS; brand: canon; description: Canon Silver PowerShot Digital Camera - SD880IS/ 10 Megapixel/ 4x Optical Zoom/ Optical Image Stabilizer/ 3.0' PureColor LCD II/ DIGIC 4 Image Processor/ Face Detection Self-Timer/ Red-Eye Correction/ 19 Shooting Modes/ Print/Share Button/ Silver Finish\n\nCandidates:\n1. name: Canon PowerShot SD1100 IS Digital ELPH Camera - Swing Silver - 2508B001; brand: Canon; description: Canon PowerShot SD1100 IS 8 Megapixels, ISO 1600, 3x Optical Zoom Digital Camera - Swing Silver\n2. name: Canon PowerShot SD990 IS 14 Megapixel Digital Camera w/ 3.7x Optical Zoom, UA Len, Face Detection, 2.5 LCD, & ISO 1600 - Silver - 3191B001; brand: Canon; price: $299.88\n3. name: Canon PowerShot SD890 IS Digital Camera - 2566B001; brand: Canon; description: Canon PowerShot SD890 IS 10 Megapixel, 5x Optical Zoom, 2.5' LCD, UA Lens Digital Camera; price: $198.00\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"None of the candidates match the brand and model number of the price-list item.\"}",
+  "input_tokens": 490,
+  "output_tokens": 36
+ }
+}

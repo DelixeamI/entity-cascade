@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Garmin GPS Carrying Case - Black Finish - 0101070400; brand: garmin; description: Garmin GPS Carrying Case - 0101070400/ Protect Your GPS By Absorbing The Impact From Routine Drops/ Prevent Damage From Scratches And Spills; price: $30.00\n\nCandidates:\n1. name: Garmin Canvas Deluxe Carry Case - 010-10231-01; brand: Garmin; description: Top Loading - Handle - Nylon - Black; price: $17.45\n2. name: Garmin Lightweight GPS Case - 010-10704-00; brand: Garmin; description: Clam Shell\n3. name: Garmin Leather GPS Case; brand: Garmin; description: Garmin 010-10723-02 - Leather GPS Case\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the model number 0101070400 exactly.\"}",
+  "input_tokens": 372,
+  "output_tokens": 39
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Weber Q 320 Liquid Propane Table And Outdoor Grill - 586002; brand: weber; description: Weber Q 320 Liquid Propane Table And Outdoor Grill - 586002/ 462 Sq. In. Total Cooking Area/ 21,700 BTU Stainless Steel Burners/ Porcelain-Enameled Cast-Iron Cooking Grate/ Cast-Aluminum Lid And Body/ Electronic Ignition/ Grill Out Handle Light/ Folding Work Tables With Tool Holders/ Removable Catch...; price: $379.00\n\nCandidates:\n1. name: Weber Q 320 Gas Grill; brand: Weber\n2. name: Weber Genesis S-320 3880001 60' Freestanding Gas Grill with 637 sq. in. Cooking Surface, 3 Stainless Steel Burners, Flush-Mounted Side Burner & Stainless Steel Shroud: Natural Gas; brand: Weber; price: $754.29\n3. name: Weber Genesis S-320 3780001 60' Freestanding Gas Grill; brand: Weber\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number (Q 320)\"}",
+  "input_tokens": 435,
+  "output_tokens": 32
+ }
+}

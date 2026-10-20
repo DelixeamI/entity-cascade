@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Expandable Bluetooth-Enabled DECT 6.0 Phone System - KXTH1212B; brand: panasonic; description: Panasonic Expandable Bluetooth-Enabled DECT 6.0 Phone System - KXTH1212B/ Call Waiting Caller ID/ White Backlit Color LCD/ Lighted Handset Keypad/ Night Mode/ Compatible With Most Bluetooth Cell Phones/ 5 Hours Talk Time/11 Days Standby Time/ 60 Channels/ Black Finish\n\nCandidates:\n1. name: Panasonic KXTH1212B; brand: Panasonic; price: $79.99\n2. name: Panasonic KX-TG9332S DECT 6.0 Expandable Digital Cordless Phone; brand: Panasonic; description: 1 x Phone Line(s) - Silver\n3. name: Panasonic KX-TG9343T Cordless Phone; brand: Panasonic; description: Panasonic KX-TG9343T DECT 6.0 Expandable Digital Cordless Answering System w/3 Handsets; price: $102.12\n",
+ "response": {
+  "text": "{\"choice\": 1, \"confidence\": 1.0, \"reason\": \"Same brand and model number KXTH1212B\"}",
+  "input_tokens": 418,
+  "output_tokens": 33
+ }
+}

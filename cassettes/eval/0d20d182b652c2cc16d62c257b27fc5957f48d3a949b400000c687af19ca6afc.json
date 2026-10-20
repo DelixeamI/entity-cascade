@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Sony BD/DVD Home Theater System - BDVIS1000; brand: sony; description: Sony BD/DVD Home Theater System - BDVIS1000/ S-AIR Wireless Capability/ XMB (Xross Media Bar) Graphical User Interface/ Precision Cinema HD With HDMI Upscaler/ 24p True Cinema/ Deep Color/ x.v.Color/ 480i/480p/576i/576p/720p/1080i/1080p(60Hz) Resolution With HDMI/ Dolby Digital, Dolby Digital Plus,...; price: $999.00\n\nCandidates:\n1. name: Sony BRAVIA DAV-IS50/B Home Theater System; brand: Sony; description: DVD Player, 5.1 Speakers - 1 Disc(s) - Progressive Scan - 450W RMS - Dolby Digital EX, Dolby Pro Logic, Dolby Pro Logic II\n2. name: Sony HT7200DH Home Theater System; brand: Sony; description: DVD Player, A/V Receiver, 5.1 Speakers - 1 Disc(s) - Progressive Scan - 1000W RMS - Dolby Digital, Dolby Pro Logic, Dolby Pro Logic II, DTS; price: $376.96\n3. name: Sony HT-DDWG700 Home Theater System - HTDDWG700; brand: Sony; description: DVD Player, 5.1 Speakers - 900W RMS - DTS, Dolby Digital, Dolby Pro Logic II; price: $206.96\n",
+ "response": {
+  "text": "{\"choice\": \"none\", \"confidence\": 1.0, \"reason\": \"No candidate matches the brand and model number Sony BDVIS1000\"}",
+  "input_tokens": 535,
+  "output_tokens": 35
+ }
+}

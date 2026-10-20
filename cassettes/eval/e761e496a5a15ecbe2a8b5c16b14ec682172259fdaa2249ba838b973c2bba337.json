@@ -1,0 +1,9 @@
+{
+ "model": "qwen2.5:14b",
+ "prompt": "You match supplier price-list items to a product catalog.\nDecide which catalog candidate, if any, is exactly the same product as the price-list item.\nRules:\n- The same product has the same brand and the same model number. Differences in colour,\n  capacity, size or bundle contents (when they change the model number) mean a different product.\n- Ignore wording differences, marketing text and price differences.\n- If no candidate is clearly the same product, answer \"none\". Do not guess.\nAnswer with one JSON object and nothing else:\n{\"choice\": <number 1..N or \"none\">, \"confidence\": <0.0..1.0>, \"reason\": \"<short sentence>\"}\n\nPrice-list item:\nname: Panasonic Integrated White Telephone System With All-Digital Answering System - KXTS620W; brand: panasonic; description: Panasonic Integrated White Telephone System With All-Digital Answering System - KXTS620W/ 2-Way Recording/ Call Waiting Caller ID/ Speakerphone/ 3-Line LCD/ Data Port/ Ringer Indicator Lamp/ Programmable Tone/Pulse/ Wall Mountable/ White Finish; price: $69.00\n\nCandidates:\n1. name: CORDED TELEPHONE - KEYPAD - SINGLE-LINE OPERATION - 2-WAY - LCD DISPLAY - BLACK - KX-TS620B; brand: Panasonic\n2. name: CORDED TELEPHONE - KEYPAD - SINGLE LINE OPERATION - LCD DISPLAY - CALLER ID; CAL - KX-TS620W; brand: Panasonic\n3. name: Panasonic KX-FP145 Plain Paper Thermal Transfer Fax/Copier - KXFP145; brand: Panasonic; description: Panasonic Slim Cabinet Plain Paper Fax/Copier with All-digital Answering System; price: $94.88\n",
+ "response": {
+  "text": "{\"choice\": 2, \"confidence\": 1.0, \"reason\": \"Same brand and model number KXTS620W\"}",
+  "input_tokens": 418,
+  "output_tokens": 32
+ }
+}
