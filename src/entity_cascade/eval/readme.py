@@ -77,5 +77,5 @@ def update_readme(r: EvalResults, path: Path) -> bool:
         return False
     head, rest = text.split(START, 1)
     _, tail = rest.split(END, 1)
-    path.write_text(f"{head}{START}\n{render_block(r)}{END}{tail}", encoding="utf-8")
+    path.write_text(f"{head}{START}\n{render_block(r)}{END}{tail}", encoding="utf-8", newline="\n")
     return True
