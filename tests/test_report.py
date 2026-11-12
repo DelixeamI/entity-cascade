@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from entity_cascade.eval.readme import END, START, render_block, update_readme
 from entity_cascade.eval.report import EvalResults, render_markdown
 from test_gate_unit import results
@@ -45,11 +43,11 @@ def test_update_readme_replaces_only_the_block(tmp_path: Path) -> None:
     assert p.read_text(encoding="utf-8") == first  # idempotent
 
 
-def test_update_readme_requires_markers(tmp_path: Path) -> None:
+def test_update_readme_without_markers_changes_nothing(tmp_path: Path) -> None:
     p = tmp_path / "README.md"
-    p.write_text("no markers here", encoding="utf-8")
-    with pytest.raises(ValueError, match="markers"):
-        update_readme(nan_results(), p)
+    p.write_text("hand-written numbers, no markers", encoding="utf-8")
+    assert update_readme(nan_results(), p) is False
+    assert p.read_text(encoding="utf-8") == "hand-written numbers, no markers"
 
 
 def test_block_without_real_llm_says_so() -> None:

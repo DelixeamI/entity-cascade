@@ -69,10 +69,13 @@ def render_block(r: EvalResults) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def update_readme(r: EvalResults, path: Path) -> None:
+def update_readme(r: EvalResults, path: Path) -> bool:
+    """Rewrite the numbers block between the markers. Returns False, and changes nothing, when
+    the README has no markers (its numbers are then written by hand, not by `make eval`)."""
     text = path.read_text(encoding="utf-8")
     if START not in text or END not in text:
-        raise ValueError(f"{path} lacks the {START} / {END} markers")
+        return False
     head, rest = text.split(START, 1)
     _, tail = rest.split(END, 1)
     path.write_text(f"{head}{START}\n{render_block(r)}{END}{tail}", encoding="utf-8")
+    return True
